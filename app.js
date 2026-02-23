@@ -114,11 +114,22 @@ function showResults() {
     candidates.forEach((c, index) => {
         const card = document.createElement('div');
         card.className = 'candidate-card';
+
+        // Use a default image if not found
+        const photoPath = c.photo || 'https://via.placeholder.com/150?text=Candidato';
+        const partyPath = c.partyLogo || 'https://via.placeholder.com/60?text=P';
+        const profilePath = c.profilePic ? `<img src="${c.profilePic}" style="width: 24px; height: 24px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">` : '';
+
         card.innerHTML = `
             <div class="rank-number">#${index + 1}</div>
+            <div class="candidate-image-container">
+                <img src="${photoPath}" alt="${c.name}" class="candidate-photo">
+                <img src="${partyPath}" alt="${c.party}" class="party-logo-mini">
+            </div>
             <div class="candidate-info">
                 <div class="candidate-name">${c.name}</div>
                 <div class="candidate-party">${c.party}</div>
+                <div class="profile-tag">${profilePath}${c.profile.replace(/_/g, ' ')}</div>
                 <div class="match-bar-bg">
                     <div class="match-bar-fill" style="width: ${c.percentage}%"></div>
                 </div>
