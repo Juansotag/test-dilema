@@ -80,15 +80,235 @@ p.description {
     width: 100%;
 }
 
-.btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
+.btn.secondary {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
 }
 
-/* Quiz Styles */
+.btn.secondary:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--text-main);
+}
+
+.btn-small {
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.candidate-selector-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.candidate-selector-card:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.candidate-selector-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary);
+}
+
+.candidate-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.candidate-photo-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+}
+
+.answers-list-detail {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+.answers-list-detail::-webkit-scrollbar {
+    width: 6px;
+}
+
+.answers-list-detail::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.answer-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.answer-item h4 {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.answer-item p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.answer-text-label {
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.disclaimer-box {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    color: #fbd38d;
+    padding: 1.2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.disclaimer-box i {
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
 .hidden {
     display: none !important;
+}
+
+/* Attribution & Social */
+.attribution-container {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.logo-sabana {
+    height: 60px;
+    object-fit: contain;
+}
+
+.logo-govlab {
+    height: 50px;
+    object-fit: contain;
+}
+
+.credits,
+.author {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+}
+
+.credits strong,
+.author strong {
+    color: var(--text-main);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.8rem 0;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.4rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.vigilada-row {
+    margin-top: 2rem;
+}
+
+.logo-vigilada {
+    height: 35px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    filter: grayscale(1) brightness(1.5);
+}
+
+.logo-vigilada:hover {
+    opacity: 1;
+    filter: none;
 }
 
 .progress-container {

@@ -5,8 +5,12 @@ let userAnswers = {};
 const landing = document.getElementById('landing');
 const quizScreen = document.getElementById('quiz-screen');
 const resultsScreen = document.getElementById('results-screen');
+const answersScreen = document.getElementById('answers-screen');
+
 const startBtn = document.getElementById('start-btn');
 const restartBtn = document.getElementById('restart-btn');
+const viewAnswersBtn = document.getElementById('view-answers-btn');
+const backToLandingBtn = document.getElementById('back-to-landing-btn');
 
 const counter = document.getElementById('counter');
 const progressBar = document.getElementById('progress-bar');
@@ -14,6 +18,13 @@ const contextTag = document.getElementById('context');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options');
 const resultsList = document.getElementById('results-list');
+
+const candidatesGrid = document.getElementById('candidates-grid');
+const candidateDetailView = document.getElementById('candidate-detail-view');
+const detailPhoto = document.getElementById('detail-photo');
+const detailName = document.getElementById('detail-name');
+const detailParty = document.getElementById('detail-party');
+const answersList = document.getElementById('answers-list');
 
 // Load data
 async function init() {
@@ -27,6 +38,7 @@ async function init() {
 
 function startQuiz() {
     landing.classList.add('hidden');
+    answersScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
     quizScreen.classList.add('animate-in');
     currentQuestionIndex = 0;
@@ -34,7 +46,65 @@ function startQuiz() {
     showQuestion();
 }
 
+function showAnswersScreen() {
+    landing.classList.add('hidden');
+    answersScreen.classList.remove('hidden');
+    answersScreen.classList.add('animate-in');
+    candidateDetailView.classList.add('hidden');
+    candidatesGrid.classList.remove('hidden');
+
+    candidatesGrid.innerHTML = '';
+    quizData.candidates.forEach(candidate => {
+        const card = document.createElement('div');
+        card.className = 'candidate-selector-card animate-in';
+        card.innerHTML = `
+            <img src="${candidate.photo || 'https://via.placeholder.com/80'}" alt="${candidate.name}">
+            <h3>${candidate.name}</h3>
+            <p>${candidate.party}</p>
+        `;
+        card.onclick = () => showCandidateDetail(candidate);
+        candidatesGrid.appendChild(card);
+    });
+}
+
+function showCandidateDetail(candidate) {
+    candidatesGrid.classList.add('hidden');
+    candidateDetailView.classList.remove('hidden');
+    candidateDetailView.classList.add('animate-in');
+
+    // Use a default image if not found
+    const detailPhotoPath = candidate.photo || 'https://via.placeholder.com/150?text=Candidato';
+    const detailPartyPath = candidate.partyLogo || 'https://via.placeholder.com/60?text=P';
+    const detailProfilePath = candidate.profilePic ? `<img src="${candidate.profilePic}" style="width: 24px; height: 24px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">` : '';
+
+    detailPhoto.src = detailPhotoPath;
+    detailName.innerText = candidate.name;
+    detailParty.innerHTML = `<img src="${detailPartyPath}" style="height: 24px; vertical-align: middle; margin-right: 8px;"> ${candidate.party}`;
+
+    answersList.innerHTML = `
+        <div class="disclaimer-box animate-in">
+            <i>⚠️</i>
+            <p>Estas no son necesariamente las respuestas oficiales dadas por el candidato. Representan lo que, de forma interna, el <strong>Laboratorio de Gobierno (GovLab)</strong> considera que serían sus posiciones frente a este dilema.</p>
+        </div>
+    `;
+
+    quizData.questions.forEach(q => {
+        const answerKey = candidate.answers[q.id];
+        const answerText = q.options[answerKey] || 'No respondió';
+
+        const item = document.createElement('div');
+        item.className = 'answer-item animate-in';
+        item.innerHTML = `
+            <h4>Pregunta ${q.id}: ${q.context}</h4>
+            <p>${q.text}</p>
+            <span class="answer-text-label">Respuesta del candidato: ${answerText}</span>
+        `;
+        answersList.appendChild(item);
+    });
+}
+
 function showQuestion() {
+    // ... existing logic ...
     const question = quizData.questions[currentQuestionIndex];
 
     // Check if question has any valid options
@@ -144,6 +214,12 @@ function showResults() {
 }
 
 startBtn.onclick = startQuiz;
+viewAnswersBtn.onclick = showAnswersScreen;
+backToLandingBtn.onclick = () => {
+    answersScreen.classList.add('hidden');
+    landing.classList.remove('hidden');
+    landing.classList.add('animate-in');
+};
 restartBtn.onclick = () => {
     resultsScreen.classList.add('hidden');
     landing.classList.remove('hidden');
