@@ -81,6 +81,12 @@ function showCandidateDetail(candidate) {
     detailName.innerText = candidate.name;
     detailParty.innerHTML = `<img src="${detailPartyPath}" style="height: 24px; vertical-align: middle; margin-right: 8px;"> ${candidate.party}`;
 
+    // Inject profile description
+    const profileTextContainer = document.getElementById('candidate-profile-text');
+    if (profileTextContainer) {
+        profileTextContainer.innerHTML = candidate.description ? candidate.description.split('\n\n').map(p => `<p>${p}</p>`).join('') : '';
+    }
+
     answersList.innerHTML = `
         <div class="disclaimer-box animate-in">
             <i>⚠️</i>
@@ -199,7 +205,7 @@ function showResults() {
             <div class="candidate-info">
                 <div class="candidate-name">${c.name}</div>
                 <div class="candidate-party">${c.party}</div>
-                <div class="profile-tag">${profilePath}${c.profile.replace(/_/g, ' ')}</div>
+                <div class="profile-tag">${profilePath}${(c.profile || '').replace(/_/g, ' ')}</div>
                 <div class="match-bar-bg">
                     <div class="match-bar-fill" style="width: ${c.percentage}%"></div>
                 </div>

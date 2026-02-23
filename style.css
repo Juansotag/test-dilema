@@ -247,6 +247,25 @@ p.description {
 }
 
 .credits,
+.candidate-profile-text {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 16px 16px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+.candidate-profile-text p {
+    margin-bottom: 1rem;
+}
+
+.candidate-profile-text p:last-child {
+    margin-bottom: 0;
+}
+
 .author {
     font-size: 0.9rem;
     color: var(--text-muted);
