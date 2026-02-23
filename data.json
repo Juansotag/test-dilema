@@ -261,7 +261,7 @@
         "B": "Reforma a la Salud",
         "C": "Reforma a la Educación",
         "D": "Reforma a la Justicia",
-        "E": "Reforma Constitucional | Prefiero no contestar."
+        "E": "Reforma Constitucional"
       }
     },
     {
@@ -366,7 +366,10 @@
       "id": 1,
       "name": "Iván Cepeda",
       "party": "Pacto Histórico",
+      "profile": "Izquierda progresista",
       "profilePic": "Perfil/izquierda_progresista.jpg",
+      "photo": "Candidatos/Iván Cepeda.png",
+      "partyLogo": "Partidos/Pacto Histórico.png",
       "description": "Senador de la República por el Pacto Histórico y uno de los líderes más visibles de la izquierda progresista en Colombia. Con una larga trayectoria en la defensa de los derechos humanos y la búsqueda de la paz, Cepeda ha sido una pieza fundamental en la construcción de diálogos con grupos armados y un crítico constante de las políticas de seguridad tradicionales.\n\nPara las elecciones de 2026, se proyecta como un candidato que busca profundizar las reformas sociales del actual gobierno, enfocándose en la justicia climática, la redistribución de la tierra y el fortalecimiento de lo público frente a los intereses privados.",
       "answers": {
         "1": "A",
@@ -405,7 +408,10 @@
       "id": 2,
       "name": "David Luna",
       "party": "Cambio Radical",
+      "profile": "Centro/Derecha",
       "profilePic": "Perfil/centro_derecha_tech.jpg",
+      "photo": "Candidatos/David Luna.png",
+      "partyLogo": "Partidos/Cambio Radical.png",
       "description": "Senador por el partido Cambio Radical y exministro de Tecnologías de la Información. Luna se ha posicionado como una voz técnica y moderna, centrada en la transformación digital, la transparencia y la eficiencia del Estado. Es reconocido por su capacidad de debate y su enfoque en soluciones prácticas a problemas complejos de infraestructura y conectividad.\n\nSu candidatura para 2026 lidera la iniciativa 'Gran Consulta por Colombia', buscando unir a sectores de centro y derecha bajo una propuesta que prioriza la reactivación económica, el apoyo al emprendimiento tecnológico y el fortalecimiento de la seguridad con apoyo de la inteligencia de datos.",
       "answers": {
         "1": "B",
@@ -444,7 +450,10 @@
       "id": 3,
       "name": "Abelardo de la Espriella",
       "party": "Movimiento de Salvación Nacional",
+      "profile": "Derecha dura",
       "profilePic": "Perfil/derecha_dura.jpg",
+      "photo": "Candidatos/Abelardo de la Espriella.png",
+      "partyLogo": "Partidos/Movimiento de Salvación Nacional.png",
       "description": "Reconocido abogado penalista y figura mediática, De la Espriella ha dado el salto a la política con un discurso de derecha conservadora y 'mano dura'. Es el líder del movimiento 'Defensores de la Patria', desde donde promueve una visión de Estado centrada en el orden, la protección de la propiedad privada y la lucha frontal contra el crimen sin concesiones.\n\nSu propuesta para 2026 se basa en lo que denomina 'recuperar la patria', enfocándose en la desregulación económica, el fortalecimiento de las fuerzas militares y una crítica severa a las políticas progresistas, apelando a un electorado que busca seguridad jurídica y valores tradicionales.",
       "answers": {
         "1": "D",
@@ -525,7 +534,10 @@
       "id": 5,
       "name": "Mauricio Cárdenas",
       "party": "Avanza Colombia",
+      "profile": "Tecnócrata",
       "profilePic": "Perfil/Tecnócrata.jpg",
+      "photo": "Candidatos/Mauricio Cárdenas.png",
+      "partyLogo": "Partidos/Avanza Colombia.png",
       "description": "Exministro de Hacienda y destacado economista, Cárdenas representa el ala técnica y moderada de la política colombiana. Con una sólida formación académica y experiencia en organismos internacionales, su perfil se orienta hacia la estabilidad macroeconómica, el manejo responsable de las finanzas públicas y el fomento de la inversión.\n\nBajo su movimiento 'Avanza Colombia', propone una candidatura centrada en el crecimiento sostenible y la reactivación del empleo. Se presenta como una alternativa de experiencia capaz de navegar crisis fiscales, priorizando la sensatez técnica sobre la polarización ideológica para las elecciones de 2026.",
       "answers": {
         "1": "B",
@@ -564,7 +576,10 @@
       "id": 6,
       "name": "Victoria Dávila",
       "party": "Movimiento Valientes",
+      "profile": "Derecha dura",
       "profilePic": "Perfil/derecha_dura.jpg",
+      "photo": "Candidatos/Victoria Dávila.png",
+      "partyLogo": "Partidos/Movimiento Valientes.png",
       "description": "Reconocida periodista y exdirectora de la Revista Semana, Dávila ha incursionado en la política tras años de un periodismo crítico y confrontativo. Su perfil se asocia con la denuncia de la corrupción y la seguridad ciudadana, utilizando un lenguaje directo que resuena con sectores descontentos con la política tradicional.\n\nCon su movimiento 'Valientes Colombia', busca liderar una propuesta de derecha que promete orden, justicia y una revisión profunda de la estructura estatal. Su candidatura para 2026 apela a una ciudadanía cansada de los privilegios políticos y que busca una figura externa con determinación para realizar cambios radicales.",
       "answers": {
         "1": "D",
@@ -603,7 +618,10 @@
       "id": 7,
       "name": "Claudia López",
       "party": "Con Claudia Imparables",
+      "profile": "Centro progresista",
       "profilePic": "Perfil/centro_progresista.jpg",
+      "photo": "Candidatos/Claudia López.png",
+      "partyLogo": "Partidos/Con Claudia Imparables.png",
       "description": "Exalcaldesa de Bogotá y exsenadora, López es una líder carismática conocida por su lucha contra la corrupción y su defensa de los servicios sociales urbanos. Su trayectoria en la academia y la política se ha centrado en la transparencia, el fortalecimiento de la educación pública y la movilidad sostenible.\n\nPara 2026, con su iniciativa 'Con Claudia Imparables', busca atraer al electorado de centro-progresista. Su propuesta se basa en un Estado cuidador, la autonomía regional y una gestión pública basada en la evidencia, presentándose como una ejecutora con temple y visión de futuro para el país.",
       "answers": {
         "1": "B",
@@ -642,7 +660,10 @@
       "id": 8,
       "name": "Juan Manuel Galán",
       "party": "Nuevo Liberalismo",
+      "profile": "Centro/Derecha",
       "profilePic": "Perfil/centro_derecha_tech.jpg",
+      "photo": "Candidatos/Juan Manuel Galán.png",
+      "partyLogo": "Partidos/Nuevo Liberalismo.png",
       "description": "Hijo del inmolado Luis Carlos Galán, Juan Manuel ha dedicado su carrera a revivir el legado del Nuevo Liberalismo. Su perfil combina una herencia política histórica con una visión moderna de defensa de la institucionalidad, la lucha contra el narcotráfico desde un enfoque de salud pública y el fortalecimiento de la democracia liberal.\n\nPara 2026, su candidatura representa una opción de centro que busca alejarse de los extremos. Propone una agenda de transformación basada en las ideas de su padre, adaptadas a los retos actuales de equidad, seguridad ciudadana y una política exterior que posicione a Colombia como un actor relevante en la región.",
       "answers": {
         "1": "B",
@@ -681,7 +702,10 @@
       "id": 9,
       "name": "Juan Carlos Pinzón",
       "party": "Verde Oxígeno",
+      "profile": "Centroderecha seguridad",
       "profilePic": "Perfil/centroderecha_seguridad.jpg",
+      "photo": "Candidatos/Juan Carlos Pinzón.png",
+      "partyLogo": "Partidos/Verde Oxígeno.png",
       "description": "Exministro de Defensa y exembajador en Estados Unidos, Pinzón es una de las voces más autorizadas en temas de seguridad y relaciones internacionales. Su perfil es marcadamente institucional, con una fuerte conexión con las fuerzas militares y un conocimiento profundo de la geopolítica regional.\n\nBajo el aval de Verde Oxígeno para 2026, su propuesta se centra en la recuperación del orden público, la seguridad jurídica para la inversión y el fortalecimiento de la alianza con socios estratégicos. Se presenta como una garantía de autoridad y estabilidad para un país que requiere retomar el control del territorio y la confianza institucional.",
       "answers": {
         "1": "B",
@@ -720,7 +744,10 @@
       "id": 10,
       "name": "Juan Daniel Oviedo",
       "party": "Con toda por Colombia",
+      "profile": "Tecnócrata",
       "profilePic": "Perfil/Tecnócrata.jpg",
+      "photo": "Candidatos/Juan Daniel Oviedo.png",
+      "partyLogo": "Partidos/Con toda por Colombia.png",
       "description": "Economista y exdirector del DANE, Oviedo irrumpió en la política con una propuesta basada en los datos y la evidencia técnica. Su paso por la administración pública le ha dado un perfil de tecnócrata cercano a la gente, capaz de explicar realidades socioeconómicas complejas de manera sencilla y transparente.\n\nSu candidatura para 2026 se construye a través de la recolección de firmas, apostando por una política que denomina 'con toda'. Propone una gestión centrada en la eficiencia, el conocimiento estadístico para orientar la inversión social y una visión de país que priorice la superación de la pobreza mediante indicadores reales de impacto y crecimiento.",
       "answers": {
         "1": "B",
@@ -759,7 +786,10 @@
       "id": 11,
       "name": "Enrique Peñalosa",
       "party": "Verde Oxígeno",
+      "profile": "Centro/Derecha",
       "profilePic": "Perfil/centro_derecha_tech.jpg",
+      "photo": "Candidatos/Enrique Peñalosa.png",
+      "partyLogo": "Partidos/Verde Oxígeno.png",
       "description": "Dos veces alcalde de Bogotá, Peñalosa es reconocido por su enfoque en el urbanismo, la movilidad y la infraestructura a gran escala. Su perfil es el de un ejecutor pragmático que privilegia la transformación física del territorio como motor de bienestar social y modernización urbana.\n\nDe cara a 2026, con el aval del partido Oxígeno, Peñalosa busca escalar su modelo de gestión a nivel nacional. Su propuesta se centra en la competitividad regional, la construcción de grandes obras de infraestructura y una visión de desarrollo que priorice la eficiencia técnica sobre los discursos ideológicos, apelando a su capacidad demostrada para gerenciar ciudades.",
       "answers": {
         "1": "D",
