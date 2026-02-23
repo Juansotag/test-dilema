@@ -1,0 +1,556 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "¿Qué modelo de política arancelaria y comercio exterior considera más adecuado para impulsar el crecimiento económico del país?",
+      "context": "Eje 1: Economía, Hacienda y Comercio",
+      "options": {
+        "A": "Implementar aranceles elevados y generalizados a bienes importados (competidores de producción local),para fomentar la creación de industria nacional y reducir la dependencia externa.",
+        "B": "Aplicar medidas arancelarias selectivas únicamente en sectores clave o ante situaciones de competencia desleal (dumping), manteniendo una economía mayoritariamente abierta.",
+        "C": "Reducir aranceles en insumos, maquinaria y tecnología para bajar costos de producción, protegiendo temporalmente solo los productos terminados de sectores sensibles.",
+        "D": "Favorecer la competencia, reducir precios y promover eficiencia”",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 2,
+      "text": "¿Qué incentivo priorizaría para atraer Inversión Extranjera Directa (IED)?",
+      "context": "Eje 1: Economía, Hacienda y Comercio",
+      "options": {
+        "A": "Crear leyes que blinden al inversionista de cambios tributarios a largo plazo a cambio de empleo.",
+        "B": "Ampliar beneficios tributarios sectoriales (Hotelería, Tech, Agro, industrias culturales) para reducir la carga fiscal.",
+        "C": "No dar beneficios a nadie en particular, sino bajar la tasa de renta corporativa general para todas las empresas.",
+        "D": "Condicionar la inversión extranjera a transferencia tecnológica obligatoria y asociación con el Estado.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 3,
+      "text": "¿Cuál es su postura frente a las Cámaras de Comercio y la carga regulatoria?",
+      "context": "Eje 1: Economía, Hacienda y Comercio",
+      "options": {
+        "A": "Apoyar una ley para eliminar las Cámaras de Comercio o hacer su registro voluntario para bajar costos al empresario.",
+        "B": "Reducir drásticamente las tarifas de renovación y aumentar la vigilancia sobre sus gastos.",
+        "C": "Defender el modelo actual pues las Cámaras ejecutan funciones públicas vitales y programas de apoyo empresarial.",
+        "D": "Delegar a una entidad estatal la administración del registro mercantil.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 4,
+      "text": "¿Cuál es su propuesta en el ámbito laboral para incentivar la creación de empleo formal?",
+      "context": "Eje 2: Trabajo, Salud y Pensiones",
+      "options": {
+        "A": "Disminuir las cargas prestacionales y flexibilizar la contratación (por horas o proyectos) para reducir el costo de entrada al mercado laboral y facilitar la creación de nuevos puestos.",
+        "B": "Seguir con el modelo actual aprobado en la ultima reforma laboral.",
+        "C": "Implementar regímenes laborales diferenciados para MiPymes y emprendimientos.",
+        "D": "Crear subsidios directos a la nómina o beneficios tributarios para empresas que contraten jóvenes, mujeres o mayores de 50 años, enfocando el gasto estatal en cerrar brechas de empleabilidad.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 5,
+      "text": "¿Cuál debe ser el mecanismo institucional para determinar el valor de la Unidad de Pago por Capitación (UPC), es decir, los recursos que destinan los ciudadanos para financiar la salud a través de las EPS?",
+      "context": "Eje 2: Trabajo, Salud y Pensiones",
+      "options": {
+        "A": "Crear una entidad técnica e independiente, con un régimen de autonomía similar al del Banco de la República, que fije la UPC basándose estrictamente en criterios técnicos, demográficos y actuariales.",
+        "B": "Delegar en la academia y centros de pensamiento la definición del costo técnico, permitiendo al Gobierno Nacional un margen de ajuste final sujeto al marco fiscal de mediano plazo.",
+        "C": "Mantener la facultad de fijación en el Ministerio de Salud para asegurar que el flujo de recursos sea coherente con las metas de salud pública y las prioridades del Plan Nacional de Desarrollo.",
+        "D": "Transformar la UPC hacia un componente variable significativo, donde el ajuste anual dependa de indicadores de impacto en salud y gestión del riesgo por parte de la entidad aseguradora.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 6,
+      "text": "¿Cómo financiar la formalización del talento humano en salud?",
+      "context": "Eje 2: Trabajo, Salud y Pensiones",
+      "options": {
+        "A": "Aumentar el presupuesto general de la nación específicamente para pagar nóminas hospitalarias (subsidio a la oferta).",
+        "B": "Aumentar la UPC (los recursos que destinan los ciudadanos para financiar la salud a través de las EPS) e incluir un componente específico \"laboral\" que solo pueda usarse para formalización.",
+        "C": "Permitir modelos de contratación híbridos que den seguridad social sin la rigidez del empleado público.",
+        "D": "Obligar a la formalización exigiendo eficiencia administrativa a los hospitales, sin girar recursos adicionales.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 7,
+      "text": "Actualmente el nuevo sistema pensional enfrenta incertidumbre, ¿Qué ajuste haría al sistema pensional colombiano?",
+      "context": "Eje 2: Trabajo, Salud y Pensiones",
+      "options": {
+        "A": "Defender e implementar la reforma tal como se aprobó, manteniendo el umbral alto en Colpensiones para garantizar recursos que paguen el bono pensional solidario.",
+        "B": "Tramitar una ley para bajar el umbral obligatorio de Colpensiones (a 1 o 1.5 salarios), permitiendo que una mayor parte del ahorro vaya a los fondos privados (ahorro nacional).",
+        "C": "Aumentar la edad de pensión o el porcentaje de cotización para que el sistema no quiebre.",
+        "D": "Buscar tumbar la obligatoriedad del pilar público (o esperar el fallo de la Corte) para regresar a un modelo donde el ciudadano tenga libertad total de elegir fondos privados.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 8,
+      "text": "¿Cómo se debe solucionar la crisis del sistema carcelario?",
+      "context": "Eje 3: Justicia, Seguridad y Convivencia",
+      "options": {
+        "A": "No construir más cárceles y reducir el hacinamiento mediante excarcelaciones masivas y justicia restaurativa.",
+        "B": "Enfocarse en el fortalecimiento de las URIS y estaciones de policía, que también son zonas de reclusión, donde la situación por hacinamiento no es menor. | Mantener las cárceles actuales y usar penas alternativas (casa por cárcel/brazaletes) para delitos no violentos.",
+        "C": "Construir mega cárceles para asegurar que los condenados cumplan su pena efectiva intramural.",
+        "D": "Privatizar la construcción y operación de cárceles (modelo concesión) para expandir el sistema rápidamente.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 9,
+      "text": "¿Cómo debe responder el sistema penal ante delitos de baja afectación económica, tales como los hurtos de escasa cuantía (por ejemplo, el hurto de celulares)?",
+      "context": "Eje 3: Justicia, Seguridad y Convivencia",
+      "options": {
+        "A": "Enfocarse 100% en prevención social y educación; la cárcel no soluciona el problema social del hurto.",
+        "B": "Penas cortas en centros de reclusión especial diferenciados, separando al ladrón del criminal violento.",
+        "C": "Endurecer las penas y eliminar beneficios: la reincidencia en hurto debe dar cárcel intramural sin excepción.",
+        "D": "Prefiero no contestar.",
+        "E": null
+      }
+    },
+    {
+      "id": 10,
+      "text": "¿Cuál debe ser la política del Estado frente a las sustancias psicoactivas?",
+      "context": "Eje 3: Justicia, Seguridad y Convivencia",
+      "options": {
+        "A": "Legalización total y regulación de todas las sustancias (incluyendo cocaína) bajo un modelo de mercado.",
+        "B": "Regular el Cannabis recreativo y medicinal, pero mantener la prohibición fuerte sobre drogas duras.",
+        "C": null,
+        "D": "Penalizar la dosis personal.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 11,
+      "text": "¿Qué herramienta principal usaría para la erradicación de cultivos ilícitos?",
+      "context": "Eje 3: Justicia, Seguridad y Convivencia",
+      "options": {
+        "A": "Retomar la aspersión con glifosato (u otros herbicidas) con drones para erradicación masiva.",
+        "B": "Usar fuerza pública y grupos móviles de erradicación manual, sin químicos aéreos.",
+        "C": "Cumplir los acuerdos de sustitución con campesinos, condicionando los incentivos de acuerdo con el cumplimiento.",
+        "D": "Enfocarse solo en interdicción (incautar cargamentos) y lavado de activos.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 12,
+      "text": "¿Cuál debe ser el futuro inmediato de la exploración de petróleo y gas?",
+      "context": "Eje 4: Recursos, Energía y Medio Ambiente",
+      "options": {
+        "A": "Suspender nuevos contratos de exploración e impedir el fracking, y si es necesario, importar gas a corto plazo.",
+        "B": "Respetar los contratos vigentes para evitar demandas, pero no firmar ninguno nuevo.",
+        "C": "Firmar nuevos contratos de exploración y asegurar la explotación en yacimientos convencionales y no convencionales, siempre que permitan la transición de la matriz energética y el parque automotor.",
+        "D": "Impulsar decididamente la exploración y explotación de hidrocarburos, incluyendo fracking y costa afuera.",
+        "E": ". Impulsar una agenda de transición energética y electromovilidad, prescindiendo a corto y mediano plazo de energías fósiles."
+      }
+    },
+    {
+      "id": 13,
+      "text": "¿Cómo destrabar los proyectos de infraestructura que requieren consulta previa?",
+      "context": "Eje 4: Recursos, Energía y Medio Ambiente",
+      "options": {
+        "A": "Limitar por ley los tiempos y el alcance de las consultas previas y licencias para que no tengan poder de veto indefinido.",
+        "B": "Mantener las exigencias pero fortalecer las instituciones que participan, para atender, descongestionar y adelantar el proceso de consulta previa.",
+        "C": "Fortalecer la consulta previa; si la comunidad dice \"no\", el proyecto no se hace, aunque sea estratégico.",
+        "D": "Asumir desde el Estado, los costos y riesgos de consultas previas sobrevinientes a los proyectos de infraestructura para evitar que el privado asuma la incertidumbre y los costos derivados.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 14,
+      "text": "¿Cuál debe ser la postura del Estado frente a los proyectos extractivos en zonas de delimitación de páramos o reservas forestales?",
+      "context": "Eje 4: Recursos, Energía y Medio Ambiente",
+      "options": {
+        "A": "Prohibir cualquier proyecto minero, de extracción y/o infraestructura en ecosistemas delimitados o de interés comunitario, priorizando la conservación del medio ambiente y/o vínculos culturales y ancestrales con el territorio",
+        "B": "Permitir proyectos mineros de extracción y/o infraestructuras siempre que garanticen tecnologías de mitigación y compensación ambiental y climática.",
+        "C": "Fortalecer las consultas populares y mecanismos de participación directa de poblaciones afectadas, para que sea la comunidad local, la que decida si permite o no la extracción en el territorio.",
+        "D": "Formalizar la minería ancestral y artesanal ya existente en estas zonas, pero prohibir la entrada de nuevos proyectos mineros y de extracción.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 15,
+      "text": "¿Cómo debe acelerar Colombia su transición hacia una economía baja en carbono?",
+      "context": "Eje 4: Recursos, Energía y Medio Ambiente",
+      "options": {
+        "A": "Aumentar drásticamente los impuestos a los combustibles fósiles para desincentivar su uso y subsidiar la compra de vehículos eléctricos.",
+        "B": "Otorgar exenciones tributarias a largo plazo para empresas que sean autogeneradoras, haciendo uso de fuentes no convencionales y renovables (como parques solares, eólicos, energía geotérmica etc.), sin castigar el consumo actual de fósiles.",
+        "C": "Mantener la dependencia actual de gas y petróleo mientras se construye la infraestructura de renovables.",
+        "D": "Regular el mercado de los bonos de carbón e imponer metas NDC a empresas, de acuerdo al sector económico al que pertenece.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 16,
+      "text": "¿Cuál sería su estrategia prioritaria para frenar la deforestación en la Amazonia?",
+      "context": "Eje 4: Recursos, Energía y Medio Ambiente",
+      "options": {
+        "A": "Uso de la fuerza pública para desalojar invasores de parques naturales y judicialización estricta de quien tale bosque.",
+        "B": "Pagarle a las familias que habitan esas zonas para que cuiden el bosque en lugar de talarlo, sin desalojarlos.",
+        "C": "Permitir el aprovechamiento maderero sostenible y controlado por empresas o comunidades en zonas de reserva para darles valor económico.",
+        "D": "Sustraer áreas de reserva ya intervenidas, titularlas para legalizar y fortalecer la actividad agropecuaria.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 17,
+      "text": "¿Cuál debería ser el futuro del crédito educativo a través del ICETEX?",
+      "context": "Eje 5: Educación y Desarrollo Social",
+      "options": {
+        "A": "Eliminar el cobro de intereses y capital mensual de tal manera que el egresado pague un % de su sueldo solo cuando consiga empleo.",
+        "B": "Mantener el modelo de crédito, pero con una tasa de interés real del 0% que solo se ajustará según la inflación anual.",
+        "C": "Condonar deudas masivamente y reducir el tamaño del ICETEX para enfocar todo el recurso en la universidad pública gratuita.",
+        "D": "Dejar el crédito solo para posgrados y estudios en el exterior.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 18,
+      "text": "¿Cómo debe invertirse el presupuesto educativo para educación superior?",
+      "context": "Eje 5: Educación y Desarrollo Social",
+      "options": {
+        "A": "Destinar el 100% de los recursos a ampliar cupos y mejorar la infraestructura de las universidades públicas, prohibiendo el desvío a privadas.",
+        "B": "Priorizar la universidad pública, pero mantener becas limitadas para estudiantes en universidades privadas.",
+        "C": "Entregar el dinero al estudiante (créditos condonables o becas) para que elija libremente entre universidad pública o privada.",
+        "D": "Prefiero no contestar.",
+        "E": null
+      }
+    },
+    {
+      "id": 19,
+      "text": "¿Cuál debería ser el núcleo de su propuesta de reforma a la educación superior?",
+      "context": "Eje 5: Educación y Desarrollo Social",
+      "options": {
+        "A": "Modificar la fórmula para que las transferencias a universidades públicas crezcan obligatoriamente varios puntos por encima del PIB/Inflación.",
+        "B": "Aumentar recursos pero condicionados a indicadores de eficiencia, cobertura y calidad.",
+        "C": "Reformar para que el Estado financie al estudiante y no a la institución, permitiendo la competencia entre pública y privada.",
+        "D": "Prefiero no contestar.",
+        "E": null
+      }
+    },
+    {
+      "id": 20,
+      "text": "¿Qué modelo propone frente al aborto en Colombia?",
+      "context": "Eje 5: Educación y Desarrollo Social",
+      "options": {
+        "A": "Despenalización total y acceso amplio como servicio de salud.",
+        "B": "Mantener el modelo vigente (hasta semana 24).",
+        "C": "Volver a las 3 causales (violación, malformación grave, riesgo para la vida/salud).",
+        "D": "Protección de la vida por nacer desde la concepción: restricciones legales amplias y apoyo a la maternidad.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 21,
+      "text": "¿Qué modelo legal propone para la maternidad subrogada?",
+      "context": "Eje 5: Educación y Desarrollo Social",
+      "options": {
+        "A": "Abolición: prohibición y sanción de la industria/intermediarios.",
+        "B": "Prohibir lo comercial; permitir, a lo sumo, sin lucro y con límites estrictos.",
+        "C": "Permitir solo “altruista” bajo reglas estrictas y supervisión.",
+        "D": "Regular con control estatal (licencias, requisitos, protección de gestante y del niño).",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 22,
+      "text": "De las siguientes reformas estructurales, ¿cuál sería prioritaria al inicio de mandato?",
+      "context": "Eje 6: Institucionalidad, Liderazgo y Estado",
+      "options": {
+        "A": "Reforma Tributaria",
+        "B": "Reforma a la Salud",
+        "C": "Reforma a la Educación",
+        "D": "Reforma a la Justicia",
+        "E": "Reforma Constitucional | Prefiero no contestar."
+      }
+    },
+    {
+      "id": 23,
+      "text": "¿Qué reforma plantea para la Procuraduría General de la Nación?",
+      "context": "Eje 6: Institucionalidad, Liderazgo y Estado",
+      "options": {
+        "A": "Eliminarla totalmente y trasladar sus funciones a la Rama Judicial.",
+        "B": "Reformarla quitándole la facultad de destituir a elegidos por voto popular, dejándola solo para cumplir con la función disciplinaria de vigilar otros funcionarios.",
+        "C": "Mantenerla tal como está hoy.",
+        "D": "Fortalecerla otorgándole funciones jurisdiccionales para que actúe como una corte anticorrupción.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 24,
+      "text": "¿Bajo qué enfoque de liderazgo público se debe orientar la transformación de la gestión estatal y la relación con la ciudadanía?",
+      "context": "Eje 6: Institucionalidad, Liderazgo y Estado",
+      "options": {
+        "A": "Priorizar un enfoque técnico y gerencial donde el líder actúa como un ejecutor de alto rendimiento, enfocado en metas cuantificables, optimización de recursos y rendición de cuentas por impacto.",
+        "B": "Actuar como un facilitador que articula esfuerzos entre el sector público, privado, la academia y la sociedad civil, reconociendo que los problemas públicos actuales superan la capacidad de respuesta de una sola entidad.",
+        "C": "Enfocarse en movilizar a la sociedad para enfrentar problemas complejos que no tienen una solución técnica única, priorizando el cambio cultural y la resiliencia institucional sobre la autoridad jerárquica.",
+        "D": "Centrar la gestión en la recuperación de la confianza ciudadana mediante la transparencia radical, la integridad absoluta y la protección del interés general como filtro supremo ante cualquier decisión de política.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 25,
+      "text": "¿Cuál debe ser el rol del Estado en el fortalecimiento del ecosistema de emprendimiento e innovación para garantizar un impacto económico sostenible?",
+      "context": "Eje 6: Institucionalidad, Liderazgo y Estado",
+      "options": {
+        "A": "Actuar como un dinamizador de inversión mediante la creación de fondos de capital semilla, garantías crediticias y coinversión con fondos privados para facilitar el escalamiento de Empresas de base tecnológica (startups) y científica de alto impacto.",
+        "B": "Implementar marcos regulatorios experimentales (arenas de prueba) que permitan a los emprendedores probar modelos de negocio disruptivos (Fintech, EdTech, IA) sin las cargas burocráticas del modelo tradicional.",
+        "C": "Priorizar la inversión en I+D (Investigación y Desarrollo) conectando los centros de investigación con las necesidades del mercado para que el conocimiento académico se transforme en productos comerciales.",
+        "D": "Enfocar los recursos estatales en la formación técnica y el apoyo a emprendimientos de conomía popular o regional, asegurando que la innovación no sea un privilegio sino un motor de inclusión social.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 26,
+      "text": "En el escenario geopolítico actual, ¿qué estrategia internacional debería priorizar Colombia?",
+      "context": "Eje 6: Institucionalidad, Liderazgo y Estado",
+      "options": {
+        "A": "Acelerar acercamientos con China en materia de infraestructura, agro, comercio exterior y turismo",
+        "B": "Mantener la doctrina del Respice pollum, alineandose internacionalmente con los Estados Unidos",
+        "C": "Buscar acuerdos con potencias intermedias (India, Brasil, Turquía, etc.)",
+        "D": "Apostar por la integración latinoamericana como bandera principal de la política exterior",
+        "E": "balancear influencias de las potencias (EEUU, China, UE, Rusia, etc.), manteniendo neutralidad"
+      }
+    },
+    {
+      "id": 27,
+      "text": "¿Cuál es su mecanismo de su preferencia para adelantar una reforma agraria?",
+      "context": "Eje 6: Institucionalidad, Liderazgo y Estado",
+      "options": {
+        "A": "El Estado debe poder expropiar tierras improductivas o de origen dudoso de manera rápida para entregarlas a campesinos sin tierra.",
+        "B": "El Estado debe comprar tierras a precio comercial a sus dueños para luego redistribuirlas.",
+        "C": "No redistribuir tierra, sino aumentar drásticamente los impuestos a los latifundios improductivos.",
+        "D": "Fomentar grandes alianzas empresariales donde el campesino sea empleado o socio minoritario.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 28,
+      "text": "¿Cuál debería ser la solución al conflicto entre taxis y plataformas digitales?",
+      "context": "Eje 7: Desarrollo Sectorial y Marca País",
+      "options": {
+        "A": "Prohibición y bloqueo efectivo de las aplicaciones para proteger el transporte público legal.",
+        "B": "Legalizarlas pero imponiéndoles las mismas cargas (cupos, seguros, tarifas) que a los taxis.",
+        "C": "Que paguen impuestos y seguros, pero sin imponer cupos ni tarifas fijas.",
+        "D": "Eliminar cupos de taxis y dejar que el mercado defina precios y oferta.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 29,
+      "text": "¿Cuál debería ser la prioridad del Estado en la política de turismo internacional?",
+      "context": "Eje 7: Desarrollo Sectorial y Marca País",
+      "options": {
+        "A": "Priorizar turismo internacional de alto gasto (naturaleza, cultura y bienestar) con regulación ambiental estricta y cupos por territorio.",
+        "B": "Impulsar grandes proyectos turísticos, conectividad aérea e infraestructura para atraer la mayor cantidad de visitantes internacionales y generar empleo rápido.",
+        "C": "Redirigir recursos hacia turismo rural y comunitario administrado por comunidades locales, aunque crezca más lento.",
+        "D": "Reducir regulación y dejar que el mercado defina qué tipo de turismo se desarrolla.",
+        "E": "Prefiero no contestar."
+      }
+    },
+    {
+      "id": 30,
+      "text": "Si Colombia tuviera que priorizar UN SOLO relato dominante de Marca País para los próximos 10 años, ¿cuál debería ser?",
+      "context": "Eje 7: Desarrollo Sectorial y Marca País",
+      "options": {
+        "A": "Mantener y perfeccionar el relato histórico de biodiversidad, paisajes y agroexportaciones icónicas.",
+        "B": "Reemplazar el relato tradicional por “Colombia líder climática”, centrada en carbono, naturaleza, agua y energías renovables.",
+        "C": "Abandonar el énfasis en atributos tradicionales (café, flores, naturaleza) para posicionar a Colombia como hub de tecnología, talento digital e industrias creativas.",
+        "D": "Mantener símbolos clásicos (naturaleza, café y flores) pero subordinarlos a un nuevo relato de innovación y sostenibilidad.",
+        "E": "Prefiero no contestar."
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": 1,
+      "name": "María Fernanda Ríos",
+      "party": "Movimiento Progreso Social",
+      "profile": "progresista",
+      "answers": {
+        "1": "B",
+        "2": "B",
+        "3": "A",
+        "4": "A",
+        "5": "A",
+        "6": "A",
+        "7": "B",
+        "8": "A",
+        "9": "A",
+        "10": "A",
+        "11": "A",
+        "12": "A",
+        "13": "B",
+        "14": "A",
+        "15": "A",
+        "16": "A",
+        "17": "A",
+        "18": "A",
+        "19": "A",
+        "20": "A",
+        "21": "A",
+        "22": "B",
+        "23": "A",
+        "24": "B",
+        "25": "A",
+        "26": "D",
+        "27": "B",
+        "28": "A",
+        "29": "A",
+        "30": "A"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Carlos Andrés Mejía",
+      "party": "Alianza Mercado y Libertad",
+      "profile": "liberal_mercado",
+      "answers": {
+        "1": "D",
+        "2": "D",
+        "3": "C",
+        "4": "C",
+        "5": "C",
+        "6": "C",
+        "7": "D",
+        "8": "C",
+        "9": "C",
+        "10": "B",
+        "11": "C",
+        "12": "C",
+        "13": "C",
+        "14": "C",
+        "15": "C",
+        "16": "C",
+        "17": "C",
+        "18": "C",
+        "19": "C",
+        "20": "C",
+        "21": "C",
+        "22": "D",
+        "23": "C",
+        "24": "D",
+        "25": "C",
+        "26": "B",
+        "27": "C",
+        "28": "C",
+        "29": "C",
+        "30": "C"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Valentina Torres",
+      "party": "Partido Verde Futuro",
+      "profile": "ambientalista",
+      "answers": {
+        "1": "C",
+        "2": "B",
+        "3": "A",
+        "4": "A",
+        "5": "B",
+        "6": "B",
+        "7": "B",
+        "8": "B",
+        "9": "B",
+        "10": "A",
+        "11": "C",
+        "12": "A",
+        "13": "B",
+        "14": "A",
+        "15": "A",
+        "16": "A",
+        "17": "B",
+        "18": "B",
+        "19": "B",
+        "20": "B",
+        "21": "B",
+        "22": "B",
+        "23": "B",
+        "24": "B",
+        "25": "A",
+        "26": "E",
+        "27": "B",
+        "28": "A",
+        "29": "A",
+        "30": "A"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Jorge Iván Salcedo",
+      "party": "Frente Orden y Seguridad",
+      "profile": "orden_seguridad",
+      "answers": {
+        "1": "A",
+        "2": "A",
+        "3": "D",
+        "4": "D",
+        "5": "D",
+        "6": "D",
+        "7": "A",
+        "8": "C",
+        "9": "C",
+        "10": "D",
+        "11": "B",
+        "12": "D",
+        "13": "B",
+        "14": "D",
+        "15": "D",
+        "16": "C",
+        "17": "D",
+        "18": "D",
+        "19": "D",
+        "20": "D",
+        "21": "D",
+        "22": "A",
+        "23": "D",
+        "24": "A",
+        "25": "D",
+        "26": "A",
+        "27": "B",
+        "28": "D",
+        "29": "D",
+        "30": "D"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Laura Camila Pardo",
+      "party": "Coalición Técnica Fiscal",
+      "profile": "tecnico_fiscal",
+      "answers": {
+        "1": "B",
+        "2": "A",
+        "3": "B",
+        "4": "B",
+        "5": "A",
+        "6": "A",
+        "7": "A",
+        "8": "B",
+        "9": "B",
+        "10": "B",
+        "11": "B",
+        "12": "B",
+        "13": "B",
+        "14": "B",
+        "15": "B",
+        "16": "B",
+        "17": "C",
+        "18": "B",
+        "19": "B",
+        "20": "B",
+        "21": "B",
+        "22": "B",
+        "23": "A",
+        "24": "A",
+        "25": "B",
+        "26": "C",
+        "27": "B",
+        "28": "B",
+        "29": "C",
+        "30": "B"
+      }
+    }
+  ]
+}

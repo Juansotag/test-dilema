@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilema Electoral: Encuentra tu Candidato</title>
+    <meta name="description" content="Descubre qué candidato a la presidencia se alinea mejor con tus valores y propuestas.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Landing -->
+        <div id="landing" class="glass-card animate-in">
+            <h1>Dilema Electoral</h1>
+            <p class="description">
+                ¿Sabes realmente quién representa mejor tus intereses? Responde estas 30 preguntas sobre los temas clave del país y descubre con qué candidato tienes mayor afinidad.
+            </p>
+            <button id="start-btn" class="btn">Empezar Test</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="glass-card hidden">
+            <span class="question-counter" id="counter">Pregunta 1 de 30</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            
+            <div id="question-container">
+                <span id="context" class="context-tag">Contexto</span>
+                <h2 id="question-text" class="question-text">¿Qué opinas sobre...?</h2>
+                
+                <div id="options" class="options-container">
+                    <!-- Options will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="glass-card hidden">
+            <h1>Tus Resultados</h1>
+            <p class="description">Este es el ranking de afinidad con los candidatos basado en tus respuestas:</p>
+            
+            <div id="results-list" class="results-list">
+                <!-- Results will be injected here -->
+            </div>
+
+            <button id="restart-btn" class="btn" style="margin-top: 2.5rem;">Repetir Test</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
