@@ -245,13 +245,61 @@ const detailName = document.getElementById('detail-name');
 const detailParty = document.getElementById('detail-party');
 const answersList = document.getElementById('answers-list');
 
-// Load data
+// Load data desde Supabase
 async function init() {
     try {
-        const response = await fetch('data.json');
-        quizData = await response.json();
+        const headers = {
+            'apikey': SUPABASE_KEY,
+            'Authorization': `Bearer ${SUPABASE_KEY}`
+        };
+
+        // Carga en paralelo: preguntas (con opciones) + candidatos (con respuestas)
+        const [qRes, cRes] = await Promise.all([
+            fetch(`${SUPABASE_URL}/rest/v1/questions?select=id,text,context,question_options(option_key,option_text)&order=id`, { headers }),
+            fetch(`${SUPABASE_URL}/rest/v1/candidates?select=id,name,party,profile,description,campaign_url,photo_url,party_logo_url,profile_pic_url,candidate_answers(question_id,answer)&order=id`, { headers })
+        ]);
+
+        if (!qRes.ok || !cRes.ok) throw new Error('Error al cargar datos de Supabase');
+
+        const [rawQuestions, rawCandidates] = await Promise.all([qRes.json(), cRes.json()]);
+
+        // Reconstruir formato compatible con el resto del app
+        const questions = rawQuestions.map(q => ({
+            id: q.id,
+            text: q.text,
+            context: q.context,
+            options: Object.fromEntries(
+                (q.question_options || []).map(o => [o.option_key, o.option_text])
+            )
+        }));
+
+        const candidates = rawCandidates.map(c => ({
+            id: c.id,
+            name: c.name,
+            party: c.party,
+            profile: c.profile,
+            description: c.description,
+            campaignUrl: c.campaign_url,
+            photo: c.photo_url,
+            partyLogo: c.party_logo_url,
+            profilePic: c.profile_pic_url,
+            answers: Object.fromEntries(
+                (c.candidate_answers || []).map(a => [String(a.question_id), a.answer])
+            )
+        }));
+
+        quizData = { questions, candidates };
+        console.log(`[Supabase] Datos cargados: ${questions.length} preguntas, ${candidates.length} candidatos`);
     } catch (error) {
-        console.error('Error loading data:', error);
+        console.error('[Supabase] Error cargando datos:', error);
+        // Fallback a data.json si Supabase falla
+        try {
+            const response = await fetch('data.json');
+            quizData = await response.json();
+            console.warn('[Fallback] Usando data.json local');
+        } catch (e) {
+            console.error('Error crítico: no se pudo cargar ninguna fuente de datos');
+        }
     }
 }
 
