@@ -117,7 +117,6 @@ function showCandidateDetail(candidate, fromResults = false) {
 
     // Campaign URL button
     const campaignBtn = document.getElementById('campaign-url-btn');
-    console.log('[Debug] campaignUrl:', candidate.campaignUrl, '| candidate:', candidate.name);
     if (candidate.campaignUrl) {
         campaignBtn.href = candidate.campaignUrl;
         campaignBtn.classList.remove('hidden');
