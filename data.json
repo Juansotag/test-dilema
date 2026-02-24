@@ -370,6 +370,7 @@
       "photo": "Candidatos/Iván Cepeda.png",
       "partyLogo": "Partidos/Pacto Histórico.png",
       "profilePic": "Perfil/izquierda_progresista.jpg",
+      "description": "Senador de la República por el Pacto Histórico y uno de los líderes más visibles de la izquierda progresista en Colombia. Con una larga trayectoria en la defensa de los derechos humanos y la búsqueda de la paz, Cepeda ha sido una pieza fundamental en la construcción de diálogos con grupos armados y un crítico constante de las políticas de seguridad tradicionales.\n\nPara las elecciones de 2026, se proyecta como un candidato que busca profundizar las reformas sociales del actual gobierno, enfocándose en la justicia climática, la redistribución de la tierra y el fortalecimiento de lo público frente a los intereses privados.",
       "answers": {
         "1": "A",
         "2": "D",
@@ -411,6 +412,7 @@
       "photo": "Candidatos/David Luna.png",
       "partyLogo": "Partidos/Cambio Radical.png",
       "profilePic": "Perfil/centro_derecha_tech.jpg",
+      "description": "Senador por el partido Cambio Radical y exministro de Tecnologías de la Información. Luna se ha posicionado como una voz técnica y moderna, centrada en la transformación digital, la transparencia y la eficiencia del Estado. Es reconocido por su capacidad de debate y su enfoque en soluciones prácticas a problemas complejos de infraestructura y conectividad.\n\nSu candidatura para 2026 lidera la iniciativa 'Gran Consulta por Colombia', buscando unir a sectores de centro y derecha bajo una propuesta que prioriza la reactivación económica, el apoyo al emprendimiento tecnológico y el fortalecimiento de la seguridad con apoyo de la inteligencia de datos.",
       "answers": {
         "1": "B",
         "2": "B",
@@ -452,6 +454,7 @@
       "photo": "Candidatos/Abelardo de la Espriella.png",
       "partyLogo": "Partidos/Movimiento de Salvación Nacional.png",
       "profilePic": "Perfil/derecha_dura.jpg",
+      "description": "Reconocido abogado penalista y figura mediática, De la Espriella ha dado el salto a la política con un discurso de derecha conservadora y 'mano dura'. Es el líder del movimiento 'Defensores de la Patria', desde donde promueve una visión de Estado centrada en el orden, la protección de la propiedad privada y la lucha frontal contra el crimen sin concesiones.\n\nSu propuesta para 2026 se basa en lo que denomina 'recuperar la patria', enfocándose en la desregulación económica, el fortalecimiento de las fuerzas militares y una crítica severa a las políticas progresistas, apelando a un electorado que busca seguridad jurídica y valores tradicionales.",
       "answers": {
         "1": "D",
         "2": "A",
@@ -493,6 +496,7 @@
       "photo": "Candidatos/Aníbal Gaviria.png",
       "partyLogo": "Partidos/Fuerza de las regiones.png",
       "profilePic": "Perfil/regional.jpg",
+      "description": "Exgobernador de Antioquia y exalcalde de Medellín, Gaviria es una figura de amplia trayectoria administrativa y reconocimiento regional. Su liderazgo se caracteriza por un enfoque en el desarrollo de infraestructura, la innovación social y la autonomía de las regiones como motor de progreso nacional.\n\nParticipa en la escena nacional para 2026 como una opción de experiencia y gestión probada, defendiendo el federalismo y la descentralización. Busca representar a las regiones que reclaman mayor poder de decisión sobre sus recursos, promoviendo un Estado eficiente que trabaje desde la periferia hacia el centro.",
       "answers": {
         "1": "B",
         "2": "A",
@@ -534,6 +538,7 @@
       "photo": "Candidatos/Mauricio Cárdenas.png",
       "partyLogo": "Partidos/Avanza Colombia.png",
       "profilePic": "Perfil/Tecnócrata.jpg",
+      "description": "Exministro de Hacienda y destacado economista, Cárdenas representa el ala técnica y moderada de la política colombiana. Con una sólida formación académica y experiencia en organismos internacionales, su perfil se orienta hacia la estabilidad macroeconómica, el manejo responsable de las finanzas públicas y el fomento de la inversión.\n\nBajo su movimiento 'Avanza Colombia', propone una candidatura centrada en el crecimiento sostenible y la reactivación del empleo. Se presenta como una alternativa de experiencia capaz de navegar crisis fiscales, priorizando la sensatez técnica sobre la polarización ideológica para las elecciones de 2026.",
       "answers": {
         "1": "B",
         "2": "C",
@@ -575,6 +580,7 @@
       "photo": "Candidatos/Victoria Dávila.png",
       "partyLogo": "Partidos/Movimiento Valientes.png",
       "profilePic": "Perfil/derecha_dura.jpg",
+      "description": "Reconocida periodista y exdirectora de la Revista Semana, Dávila ha incursionado en la política tras años de un periodismo crítico y confrontativo. Su perfil se asocia con la denuncia de la corrupción y la seguridad ciudadana, utilizando un lenguaje directo que resuena con sectores descontentos con la política tradicional.\n\nCon su movimiento 'Valientes Colombia', busca liderar una propuesta de derecha que promete orden, justicia y una revisión profunda de la estructura estatal. Su candidatura para 2026 apela a una ciudadanía cansada de los privilegios políticos y que busca una figura externa con determinación para realizar cambios radicales.",
       "answers": {
         "1": "D",
         "2": "C",
@@ -616,6 +622,7 @@
       "photo": "Candidatos/Claudia López.png",
       "partyLogo": "Partidos/Con Claudia Imparables.png",
       "profilePic": "Perfil/centro_progresista.jpg",
+      "description": "Exalcaldesa de Bogotá y exsenadora, López es una líder carismática conocida por su lucha contra la corrupción y su defensa de los servicios sociales urbanos. Su trayectoria en la academia y la política se ha centrado en la transparencia, el fortalecimiento de la educación pública y la movilidad sostenible.\n\nPara 2026, con su iniciativa 'Con Claudia Imparables', busca atraer al electorado de centro-progresista. Su propuesta se basa en un Estado cuidador, la autonomía regional y una gestión pública basada en la evidencia, presentándose como una ejecutora con temple y visión de futuro para el país.",
       "answers": {
         "1": "B",
         "2": "D",
@@ -657,6 +664,7 @@
       "photo": "Candidatos/Juan Manuel Galán.png",
       "partyLogo": "Partidos/Nuevo Liberalismo.png",
       "profilePic": "Perfil/centro_derecha_tech.jpg",
+      "description": "Hijo del inmolado Luis Carlos Galán, Juan Manuel ha dedicado su carrera a revivir el legado del Nuevo Liberalismo. Su perfil combina una herencia política histórica con una visión moderna de defensa de la institucionalidad, la lucha contra el narcotráfico desde un enfoque de salud pública y el fortalecimiento de la democracia liberal.\n\nPara 2026, su candidatura representa una opción de centro que busca alejarse de los extremos. Propone una agenda de transformación basada en las ideas de su padre, adaptadas a los retos actuales de equidad, seguridad ciudadana y una política exterior que posicione a Colombia como un actor relevante en la región.",
       "answers": {
         "1": "B",
         "2": "A",
@@ -698,6 +706,7 @@
       "photo": "Candidatos/Juan Carlos Pinzón.png",
       "partyLogo": "Partidos/Verde Oxígeno.png",
       "profilePic": "Perfil/centroderecha_seguridad.jpg",
+      "description": "Exministro de Defensa y exembajador en Estados Unidos, Pinzón es una de las voces más autorizadas en temas de seguridad y relaciones internacionales. Su perfil es marcadamente institucional, con una fuerte conexión con las fuerzas militares y un conocimiento profundo de la geopolítica regional.\n\nBajo el aval de Verde Oxígeno para 2026, su propuesta se centra en la recuperación del orden público, la seguridad jurídica para la inversión y el fortalecimiento de la alianza con socios estratégicos. Se presenta como una garantía de autoridad y estabilidad para un país que requiere retomar el control del territorio y la confianza institucional.",
       "answers": {
         "1": "B",
         "2": "A",
@@ -739,6 +748,7 @@
       "photo": "Candidatos/Juan Daniel Oviedo.png",
       "partyLogo": "Partidos/Con toda por Colombia.png",
       "profilePic": "Perfil/Tecnócrata.jpg",
+      "description": "Economista y exdirector del DANE, Oviedo irrumpió en la política con una propuesta basada en los datos y la evidencia técnica. Su paso por la administración pública le ha dado un perfil de tecnócrata cercano a la gente, capaz de explicar realidades socioeconómicas complejas de manera sencilla y transparente.\n\nSu candidatura para 2026 se construye a través de la recolección de firmas, apostando por una política que denomina 'con toda'. Propone una gestión centrada en la eficiencia, el conocimiento estadístico para orientar la inversión social y una visión de país que priorice la superación de la pobreza mediante indicadores reales de impacto y crecimiento.",
       "answers": {
         "1": "B",
         "2": "C",
@@ -780,6 +790,7 @@
       "photo": "Candidatos/Enrique Peñalosa.png",
       "partyLogo": "Partidos/Verde Oxígeno.png",
       "profilePic": "Perfil/centro_derecha_tech.jpg",
+      "description": "Dos veces alcalde de Bogotá, Peñalosa es reconocido por su enfoque en el urbanismo, la movilidad y la infraestructura a gran escala. Su perfil es el de un ejecutor pragmático que privilegia la transformación física del territorio como motor de bienestar social y modernización urbana.\n\nDe cara a 2026, con el aval del partido Oxígeno, Peñalosa busca escalar su modelo de gestión a nivel nacional. Su propuesta se centra en la competitividad regional, la construcción de grandes obras de infraestructura y una visión de desarrollo que priorice la eficiencia técnica sobre los discursos ideológicos, apelando a su capacidad demostrada para gerenciar ciudades.",
       "answers": {
         "1": "D",
         "2": "C",
@@ -821,6 +832,7 @@
       "photo": "Candidatos/Paloma Valencia.png",
       "partyLogo": "Partidos/Centro Democrático.png",
       "profilePic": "Perfil/derecha_uribismo.jpg",
+      "description": "Senadora del Centro Democrático y candidata presidencial oficial del uribismo para 2026. Abogada y filósofa de la Universidad de los Andes, con maestría en Escritura Creativa de la Universidad de Nueva York, cuenta con una trayectoria legíslativa de más de una década como vocera del partido. Nieta del expresidente Guillermo León Valencia, combina un linaje político histórico con un discurso propio centrado en la seguridad, la defensa de los derechos de las víctimas y el apoyo al sector agropecuario.\n\nSu candidatura para 2026 la posiciona como la primera mujer que aspiraría a la presidencia por el Centro Democrático. Su propuesta, resumida en el lema 'Vivir sin miedo', apuesta por recuperar la seguridad como base del desarrollo, restaurar la institucionalidad frente a los grupos armados, y un manejo responsable de las finanzas públicas, reforzando así la opción de derecha democrática frente a la polarización actual.",
       "answers": {
         "1": "D",
         "2": "C",
@@ -862,6 +874,7 @@
       "photo": "Candidatos/Roy Barreras.png",
       "partyLogo": "Partidos/Fuerza.png",
       "profilePic": "Perfil/izquierda_progresista.jpg",
+      "description": "Exsenador, exparlamentario y exembajador de Colombia en el Reino Unido, Barreras es uno de los políticos más experimentados del país, con una carrera que abarca más de dos décadas en el Congreso. Presió el Congreso de la República en dos ocasiones (2012-2013 y 2022-2023) y fue parte de la delegación del Gobierno en las negociaciones de paz con las FARC en Cuba. A lo largo de su trayectoria transitó por el Partido Liberal, Cambio Radical, el Partido de la U y el Pacto Histórico, lo que le otorga un amplio conocimiento de todos los espectros políticos.\n\nPara 2026, renunció a su cargo diplomático para lanzar su candidatura desde su propio partido, 'La Fuerza de la Paz'. Se presenta como una opción de centro que busca superar la polarización, con propuestas de seguridad total, reactivación económica y unidad nacional. Su lema es reconciliar a los colombianos bajo la premisa de que un país unido es la base para cualquier reforma profunda y sostenible.",
       "answers": {
         "1": "A",
         "2": "D",
@@ -903,6 +916,7 @@
       "photo": "Candidatos/Sergio Fajardo.png",
       "partyLogo": "Partidos/Dignidad y Compromiso.png",
       "profilePic": "Perfil/centro_progresista.jpg",
+      "description": "Matemático, doctor de la Universidad de Wisconsin y exdocente universitario, Fajardo entró a la política por fuera de los partidos tradicionales fundando el movimiento cívico 'Compromiso Ciudadano'. Como alcalde de Medellín (2004-2007) transformó la ciudad en un referente mundial de urbanismo social, y como gobernador de Antioquia (2012-2015) impulsó el plan 'Antioquia la Más Educada', reconocido por su transparencia y gestión de regalías. Es su tercer intento presidencial, tras quedar tercero en 2018 y cuarto en 2022.\n\nPara las elecciones de 2026 se presenta con el partido 'Dignidad y Compromiso', que cofundó en 2023. Su propuesta se estructura en torno a la educación como motor de desarrollo, la seguridad con un enfoque institucional y el rechazo frontal a la política de 'Paz Total'. Bajo el lema 'podemos ser diferentes sin ser enemigos', busca construir una alternativa de centro basada en la meritocracia, la transparencia y la capacidad demostrada de transformar territorios desde la base.",
       "answers": {
         "1": "B",
         "2": "A",
