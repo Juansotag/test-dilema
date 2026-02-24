@@ -1,6 +1,7 @@
 let quizData = null;
 let currentQuestionIndex = 0;
 let userAnswers = {};
+let cameFromResults = false;
 
 const landing = document.getElementById('landing');
 const quizScreen = document.getElementById('quiz-screen');
@@ -47,6 +48,7 @@ function startQuiz() {
 }
 
 function showAnswersScreen() {
+    cameFromResults = false;
     landing.classList.add('hidden');
     answersScreen.classList.remove('hidden');
     answersScreen.classList.add('animate-in');
@@ -67,7 +69,14 @@ function showAnswersScreen() {
     });
 }
 
-function showCandidateDetail(candidate) {
+function showCandidateDetail(candidate, fromResults = false) {
+    cameFromResults = fromResults;
+    if (fromResults) {
+        resultsScreen.classList.add('hidden');
+        answersScreen.classList.remove('hidden');
+        answersScreen.classList.add('animate-in');
+    }
+
     candidatesGrid.classList.add('hidden');
     candidateDetailView.classList.remove('hidden');
     candidateDetailView.classList.add('animate-in');
@@ -190,6 +199,8 @@ function showResults() {
     candidates.forEach((c, index) => {
         const card = document.createElement('div');
         card.className = 'candidate-card';
+        card.style.cursor = 'pointer';
+        card.onclick = () => showCandidateDetail(c, true);
 
         // Use a default image if not found
         const photoPath = c.photo || 'https://via.placeholder.com/150?text=Candidato';
@@ -222,9 +233,22 @@ function showResults() {
 startBtn.onclick = startQuiz;
 viewAnswersBtn.onclick = showAnswersScreen;
 backToLandingBtn.onclick = () => {
-    answersScreen.classList.add('hidden');
-    landing.classList.remove('hidden');
-    landing.classList.add('animate-in');
+    if (cameFromResults) {
+        answersScreen.classList.add('hidden');
+        resultsScreen.classList.remove('hidden');
+        resultsScreen.classList.add('animate-in');
+        cameFromResults = false;
+    } else {
+        if (!candidateDetailView.classList.contains('hidden')) {
+            candidateDetailView.classList.add('hidden');
+            candidatesGrid.classList.remove('hidden');
+            candidatesGrid.classList.add('animate-in');
+        } else {
+            answersScreen.classList.add('hidden');
+            landing.classList.remove('hidden');
+            landing.classList.add('animate-in');
+        }
+    }
 };
 restartBtn.onclick = () => {
     resultsScreen.classList.add('hidden');
