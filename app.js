@@ -1,4 +1,4 @@
-// --- Supabase REST API ---
+﻿// --- Supabase REST API ---
 const SUPABASE_URL = 'https://vsvzquvcuhsngjvdwdnc.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_DJ1mK2CAQLRfYLx17u3_oQ_EL6P_9gE';
 
@@ -75,6 +75,118 @@ async function saveComment(comment) {
     }
 }
 // --- Fin Supabase ---
+
+// --- Compartir resultados ---
+const MEDALS = ['🥇', '🥈', '🥉'];
+
+function populateShareCard(top3) {
+    const title = document.getElementById('share-card-title');
+    const container = document.getElementById('share-card-candidates');
+    title.textContent = userName
+        ? `${userName}, estos son tus candidatos:`
+        : 'Mis candidatos con mayor afinidad:';
+    container.innerHTML = top3.map((c, i) => `
+        <div class="share-candidate-row">
+            <span class="share-medal">${MEDALS[i]}</span>
+            <img src="${c.photo || ''}" class="share-candidate-photo" crossorigin="anonymous" onerror="this.style.display='none'">
+            <div class="share-candidate-info">
+                <span class="share-candidate-name">${c.name}</span>
+                <span class="share-candidate-party">${c.party}</span>
+            </div>
+            <span class="share-pct">${c.percentage}%</span>
+        </div>
+    `).join('');
+}
+
+async function captureCard() {
+    const card = document.getElementById('share-card');
+    // Mostrar tarjeta temporalmente fuera de pantalla para capturarla
+    card.style.position = 'fixed';
+    card.style.left = '-9999px';
+    card.style.top = '0';
+    card.style.display = 'block';
+    await new Promise(r => setTimeout(r, 150)); // esperar render de imágenes
+    const canvas = await html2canvas(card, {
+        backgroundColor: '#0f172a',
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        logging: false
+    });
+    card.style.display = 'none';
+    card.style.position = '';
+    card.style.left = '';
+    card.style.top = '';
+    return canvas;
+}
+
+async function captureAndDownload() {
+    const btn = document.getElementById('btn-download');
+    btn.textContent = 'Generando...';
+    btn.disabled = true;
+    try {
+        const canvas = await captureCard();
+        const link = document.createElement('a');
+        link.download = `dilema-electoral-${(userName || 'resultados').replace(/\s+/g, '-')}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    } finally {
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Descargar imagen`;
+        btn.disabled = false;
+    }
+}
+
+async function shareToTwitter(top3) {
+    const btn = document.getElementById('btn-twitter');
+    btn.textContent = 'Preparando...';
+    btn.disabled = true;
+    try {
+        const canvas = await captureCard();
+        const link = document.createElement('a');
+        link.download = `dilema-electoral-${(userName || 'resultados').replace(/\s+/g, '-')}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        await new Promise(r => setTimeout(r, 500));
+        const names = top3.slice(0, 3).map((c, i) => `${MEDALS[i]} ${c.name} (${c.percentage}%)`).join(' ');
+        const text = userName
+            ? `${userName} hizo el test Dilema Electoral 2026 del GovLab U. Sabana\n\nMis candidatos:\n${names}\n\n¿Cuál es el tuyo?`
+            : `Hice el test Dilema Electoral 2026 del GovLab U. Sabana\n\nMis candidatos:\n${names}\n\n¿Cuál es el tuyo?`;
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+        setTimeout(() => alert(' La imagen se descargó.\nAdjúntala al tweet (icono imagen en el editor).'), 800);
+    } finally {
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Compartir en X`;
+        btn.disabled = false;
+    }
+}
+
+async function shareNative(top3) {
+    const btn = document.getElementById('btn-share-native');
+    if (navigator.share) {
+        try {
+            btn.textContent = 'Preparando...';
+            btn.disabled = true;
+            const canvas = await captureCard();
+            const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+            const file = new File([blob], 'dilema-electoral.png', { type: 'image/png' });
+            const shareData = { files: [file], title: 'Dilema Electoral 2026', text: '¿Con quién tienes más afinidad?' };
+            if (navigator.canShare && navigator.canShare(shareData)) {
+                await navigator.share(shareData);
+            } else {
+                // Fallback: share without file
+                await navigator.share({ title: 'Dilema Electoral 2026', text: '¿Cuál es tu candidato?', url: window.location.href });
+            }
+        } catch (e) {
+            if (e.name !== 'AbortError') captureAndDownload();
+        } finally {
+            btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Compartir`;
+            btn.disabled = false;
+        }
+    } else {
+        // Desktop sin Web Share API → descarga directa
+        captureAndDownload();
+    }
+}
+// --- Fin compartir ---
 
 let quizData = null;
 let currentQuestionIndex = 0;
@@ -408,6 +520,13 @@ function showResults() {
         `;
         resultsList.appendChild(card);
     });
+
+    // Llenar y conectar botones de compartir con los top 3
+    const top3 = candidates.slice(0, 3);
+    populateShareCard(top3);
+    document.getElementById('btn-download').onclick = () => captureAndDownload();
+    document.getElementById('btn-twitter').onclick = () => shareToTwitter(top3);
+    document.getElementById('btn-share-native').onclick = () => shareNative(top3);
 }
 
 startBtn.onclick = showNameScreen;

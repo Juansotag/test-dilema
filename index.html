@@ -142,9 +142,54 @@
                 <!-- Results will be injected here -->
             </div>
 
+            <!-- Tarjeta oculta para screenshot -->
+            <div id="share-card" aria-hidden="true">
+                <div class="share-card-header">
+                    <span class="share-card-logo">🗳️ Dilema Electoral 2026</span>
+                    <span class="share-card-subtitle">GovLab · Universidad de La Sabana</span>
+                </div>
+                <p id="share-card-title" class="share-card-user-title"></p>
+                <div id="share-card-candidates" class="share-card-candidates"></div>
+                <p class="share-card-cta">¿Cuál es tu candidato? → https://test-dilema-production.up.railway.app/</p>
+            </div>
+
+            <!-- Botones de compartir -->
+            <div class="share-section">
+                <p class="share-section-label"> Comparte tus resultados</p>
+                <div class="share-buttons">
+                    <button id="btn-download" class="btn-share btn-share-download">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Descargar imagen
+                    </button>
+                    <button id="btn-twitter" class="btn-share btn-share-twitter">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        Compartir en X
+                    </button>
+                    <button id="btn-share-native" class="btn-share btn-share-native">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="18" cy="5" r="3" />
+                            <circle cx="6" cy="12" r="3" />
+                            <circle cx="18" cy="19" r="3" />
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                        </svg>
+                        Compartir
+                    </button>
+                </div>
+            </div>
+
             <!-- Sección de comentarios -->
             <div class="feedback-section">
-                <h3 class="feedback-title">💬 Comparte tu opinión</h3>
+                <h3 class="feedback-title"> Comparte tu opinión</h3>
                 <p class="feedback-subtitle">¿Qué te pareció el test? ¿Tienes algún comentario, crítica o sugerencia?
                 </p>
                 <textarea id="feedback-text" class="feedback-textarea" placeholder="Escribe tu comentario aquí..."
@@ -161,6 +206,7 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="app.js"></script>
 </body>
 
