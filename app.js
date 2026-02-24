@@ -1,3 +1,28 @@
+// --- Supabase ---
+const SUPABASE_URL = 'https://vsvzquvcuhsngjvdwdnc.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_DJ1mK2CAQLRfYLx17u3_oQ_EL6P_9gE';
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async function saveResponse(answers, sortedCandidates) {
+    try {
+        const row = {
+            top_candidate: sortedCandidates[0].name,
+            top_percentage: sortedCandidates[0].percentage,
+            results: sortedCandidates.map(c => ({ name: c.name, percentage: c.percentage }))
+        };
+        // Mapear respuestas: { "1": "A", "2": "C" } → { q1: "A", q2: "C" }
+        Object.entries(answers).forEach(([id, answer]) => {
+            row[`q${id}`] = answer;
+        });
+        const { error } = await db.from('quiz_responses').insert(row);
+        if (error) console.warn('[Supabase] Error al guardar:', error.message);
+        else console.log('[Supabase] Respuesta guardada correctamente.');
+    } catch (e) {
+        console.warn('[Supabase] Error inesperado:', e);
+    }
+}
+// --- Fin Supabase ---
+
 let quizData = null;
 let currentQuestionIndex = 0;
 let userAnswers = {};
@@ -207,6 +232,9 @@ function showResults() {
 
     // Sort by percentage descending
     candidates.sort((a, b) => b.percentage - a.percentage);
+
+    // Guardar en Supabase (sin bloquear la UI)
+    saveResponse(userAnswers, candidates);
 
     resultsList.innerHTML = '';
     candidates.forEach((c, index) => {
