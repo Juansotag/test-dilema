@@ -292,14 +292,7 @@ async function init() {
         console.log(`[Supabase] Datos cargados: ${questions.length} preguntas, ${candidates.length} candidatos`);
     } catch (error) {
         console.error('[Supabase] Error cargando datos:', error);
-        // Fallback a data.json si Supabase falla
-        try {
-            const response = await fetch('data.json');
-            quizData = await response.json();
-            console.warn('[Fallback] Usando data.json local');
-        } catch (e) {
-            console.error('Error crítico: no se pudo cargar ninguna fuente de datos');
-        }
+        alert('Error al cargar los datos. Por favor recarga la página.');
     }
 }
 
