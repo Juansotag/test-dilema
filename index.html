@@ -104,6 +104,17 @@
 
         </div>
 
+        <!-- Name Screen -->
+        <div id="name-screen" class="glass-card hidden">
+            <h1>Antes de empezar...</h1>
+            <p class="description">¿Cuál es tu nombre?</p>
+            <div class="name-input-group">
+                <input type="text" id="name-input" class="name-input" placeholder="Escribe tu nombre aquí"
+                    maxlength="80" autocomplete="given-name" />
+                <button id="name-continue-btn" class="btn" disabled>Continuar →</button>
+            </div>
+        </div>
+
         <!-- Quiz Screen -->
         <div id="quiz-screen" class="glass-card hidden">
             <span class="question-counter" id="counter">Pregunta 1 de 30</span>
@@ -123,8 +134,9 @@
 
         <!-- Results Screen -->
         <div id="results-screen" class="glass-card hidden">
-            <h1>Tus Resultados</h1>
-            <p class="description">Este es el ranking de afinidad con los candidatos basado en tus respuestas:</p>
+            <h1 id="results-title">Tus Resultados</h1>
+            <p id="results-subtitle" class="description">Este es el ranking de afinidad con los candidatos basado en tus
+                respuestas:</p>
 
             <div id="results-list" class="results-list">
                 <!-- Results will be injected here -->

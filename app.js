@@ -7,6 +7,7 @@ let lastResponseId = null; // guarda el id de la última respuesta guardada
 async function saveResponse(answers, sortedCandidates) {
     try {
         const row = {
+            respondent_name: userName || 'Anónimo',
             top_candidate: sortedCandidates[0].name,
             top_percentage: sortedCandidates[0].percentage,
             results: sortedCandidates.map(c => ({ name: c.name, percentage: c.percentage }))
@@ -79,16 +80,21 @@ let quizData = null;
 let currentQuestionIndex = 0;
 let userAnswers = {};
 let cameFromResults = false;
+let userName = '';
 
 const landing = document.getElementById('landing');
+const nameScreen = document.getElementById('name-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultsScreen = document.getElementById('results-screen');
 const answersScreen = document.getElementById('answers-screen');
 
 const startBtn = document.getElementById('start-btn');
+const nameContinueBtn = document.getElementById('name-continue-btn');
+const nameInput = document.getElementById('name-input');
 const restartBtn = document.getElementById('restart-btn');
 const viewAnswersBtn = document.getElementById('view-answers-btn');
 const backToLandingBtn = document.getElementById('back-to-landing-btn');
+
 const feedbackText = document.getElementById('feedback-text');
 const feedbackSubmitBtn = document.getElementById('feedback-submit-btn');
 const feedbackStatus = document.getElementById('feedback-status');
@@ -150,15 +156,43 @@ async function init() {
     }
 }
 
-function startQuiz() {
+function showNameScreen() {
     landing.classList.add('hidden');
     answersScreen.classList.add('hidden');
+    resultsScreen.classList.add('hidden');
+    nameScreen.classList.remove('hidden');
+    nameScreen.classList.add('animate-in');
+    nameInput.value = '';
+    nameContinueBtn.disabled = true;
+    setTimeout(() => nameInput.focus(), 300);
+}
+
+function startQuiz() {
+    nameScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
     quizScreen.classList.add('animate-in');
     currentQuestionIndex = 0;
     userAnswers = {};
     showQuestion();
 }
+
+// Habilitar botón Continuar solo si hay nombre
+nameInput.addEventListener('input', () => {
+    nameContinueBtn.disabled = nameInput.value.trim().length === 0;
+});
+
+// Presionar Enter en el input también continúa
+nameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && nameInput.value.trim().length > 0) {
+        userName = nameInput.value.trim();
+        startQuiz();
+    }
+});
+
+nameContinueBtn.addEventListener('click', () => {
+    userName = nameInput.value.trim();
+    startQuiz();
+});
 
 function showAnswersScreen() {
     cameFromResults = false;
@@ -296,6 +330,17 @@ function showResults() {
     resultsScreen.classList.remove('hidden');
     resultsScreen.classList.add('animate-in');
 
+    // Personalizar título con el nombre del usuario
+    const resultsTitle = document.getElementById('results-title');
+    const resultsSubtitle = document.getElementById('results-subtitle');
+    if (userName) {
+        resultsTitle.textContent = `${userName}, estos son tus resultados`;
+        resultsSubtitle.textContent = `Tienes más afinidad con los siguientes candidatos:`;
+    } else {
+        resultsTitle.textContent = 'Tus Resultados';
+        resultsSubtitle.textContent = 'Este es el ranking de afinidad con los candidatos basado en tus respuestas:';
+    }
+
     const candidates = quizData.candidates.map(candidate => {
         let matches = 0;
         let totalAnswered = 0;
@@ -365,7 +410,7 @@ function showResults() {
     });
 }
 
-startBtn.onclick = startQuiz;
+startBtn.onclick = showNameScreen;
 viewAnswersBtn.onclick = showAnswersScreen;
 backToLandingBtn.onclick = () => {
     if (cameFromResults) {
@@ -387,7 +432,7 @@ backToLandingBtn.onclick = () => {
 };
 restartBtn.onclick = () => {
     resultsScreen.classList.add('hidden');
-    landing.classList.remove('hidden');
+    showNameScreen();
 };
 
 init();
