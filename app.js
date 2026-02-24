@@ -1,7 +1,8 @@
-// --- Supabase ---
+// --- Supabase REST API ---
 const SUPABASE_URL = 'https://vsvzquvcuhsngjvdwdnc.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_DJ1mK2CAQLRfYLx17u3_oQ_EL6P_9gE';
-const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let lastResponseId = null; // guarda el id de la última respuesta guardada
 
 async function saveResponse(answers, sortedCandidates) {
     try {
@@ -10,15 +11,66 @@ async function saveResponse(answers, sortedCandidates) {
             top_percentage: sortedCandidates[0].percentage,
             results: sortedCandidates.map(c => ({ name: c.name, percentage: c.percentage }))
         };
-        // Mapear respuestas: { "1": "A", "2": "C" } → { q1: "A", q2: "C" }
         Object.entries(answers).forEach(([id, answer]) => {
             row[`q${id}`] = answer;
         });
-        const { error } = await db.from('quiz_responses').insert(row);
-        if (error) console.warn('[Supabase] Error al guardar:', error.message);
-        else console.log('[Supabase] Respuesta guardada correctamente.');
+
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/quiz_responses`, {
+            method: 'POST',
+            headers: {
+                'apikey': SUPABASE_KEY,
+                'Authorization': `Bearer ${SUPABASE_KEY}`,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=representation'
+            },
+            body: JSON.stringify(row)
+        });
+
+        if (response.ok) {
+            const [data] = await response.json();
+            lastResponseId = data?.id || null;
+            console.log('[Supabase] Respuesta guardada. ID:', lastResponseId);
+            // Habilitar el botón de comentario ahora que tenemos el ID
+            const btn = document.getElementById('feedback-submit-btn');
+            if (btn) {
+                btn.disabled = false;
+                btn.textContent = 'Enviar comentario';
+            }
+        } else {
+            const errText = await response.text();
+            console.warn('[Supabase] Error al guardar:', response.status, errText);
+            // El botón queda deshabilitado si no se pudo guardar
+            const btn = document.getElementById('feedback-submit-btn');
+            if (btn) btn.textContent = 'No disponible';
+        }
     } catch (e) {
         console.warn('[Supabase] Error inesperado:', e);
+    }
+}
+
+async function saveComment(comment) {
+    if (!lastResponseId) {
+        console.warn('[Supabase] No hay respuesta guardada a la que vincular el comentario.');
+        return false;
+    }
+    try {
+        const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/quiz_responses?id=eq.${lastResponseId}`,
+            {
+                method: 'PATCH',
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': `Bearer ${SUPABASE_KEY}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({ comment })
+            }
+        );
+        return response.ok;
+    } catch (e) {
+        console.warn('[Supabase] Error al guardar comentario:', e);
+        return false;
     }
 }
 // --- Fin Supabase ---
@@ -37,6 +89,42 @@ const startBtn = document.getElementById('start-btn');
 const restartBtn = document.getElementById('restart-btn');
 const viewAnswersBtn = document.getElementById('view-answers-btn');
 const backToLandingBtn = document.getElementById('back-to-landing-btn');
+const feedbackText = document.getElementById('feedback-text');
+const feedbackSubmitBtn = document.getElementById('feedback-submit-btn');
+const feedbackStatus = document.getElementById('feedback-status');
+const feedbackCharCount = document.getElementById('feedback-char-count');
+
+// Contador de caracteres del textarea
+feedbackText.addEventListener('input', () => {
+    const len = feedbackText.value.length;
+    feedbackCharCount.textContent = `${len} / 1000`;
+});
+
+// Enviar comentario
+feedbackSubmitBtn.addEventListener('click', async () => {
+    const text = feedbackText.value.trim();
+    if (!text) {
+        feedbackStatus.textContent = '⚠️ Por favor escribe algo antes de enviar.';
+        feedbackStatus.className = 'feedback-status error';
+        return;
+    }
+    feedbackSubmitBtn.disabled = true;
+    feedbackSubmitBtn.textContent = 'Enviando...';
+    const ok = await saveComment(text);
+    if (ok) {
+        feedbackStatus.textContent = '✅ ¡Gracias por tu comentario!';
+        feedbackStatus.className = 'feedback-status success';
+        feedbackText.value = '';
+        feedbackCharCount.textContent = '0 / 1000';
+        feedbackSubmitBtn.textContent = 'Comentario enviado';
+    } else {
+        feedbackStatus.textContent = '❌ Error al enviar. Intenta de nuevo.';
+        feedbackStatus.className = 'feedback-status error';
+        feedbackSubmitBtn.disabled = false;
+        feedbackSubmitBtn.textContent = 'Enviar comentario';
+    }
+});
+
 
 const counter = document.getElementById('counter');
 const progressBar = document.getElementById('progress-bar');
@@ -231,6 +319,13 @@ function showResults() {
 
     // Sort by percentage descending
     candidates.sort((a, b) => b.percentage - a.percentage);
+
+    // Deshabilitar botón de comentario hasta que el guardado termine
+    const fbBtn = document.getElementById('feedback-submit-btn');
+    if (fbBtn) {
+        fbBtn.disabled = true;
+        fbBtn.textContent = 'Guardando...';
+    }
 
     // Guardar en Supabase (sin bloquear la UI)
     saveResponse(userAnswers, candidates);

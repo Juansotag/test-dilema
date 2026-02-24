@@ -130,11 +130,25 @@
                 <!-- Results will be injected here -->
             </div>
 
-            <button id="restart-btn" class="btn" style="margin-top: 2.5rem;">Repetir Test</button>
+            <!-- Sección de comentarios -->
+            <div class="feedback-section">
+                <h3 class="feedback-title">💬 Comparte tu opinión</h3>
+                <p class="feedback-subtitle">¿Qué te pareció el test? ¿Tienes algún comentario, crítica o sugerencia?
+                </p>
+                <textarea id="feedback-text" class="feedback-textarea" placeholder="Escribe tu comentario aquí..."
+                    rows="4" maxlength="1000"></textarea>
+                <div class="feedback-actions">
+                    <span id="feedback-char-count" class="feedback-char-count">0 / 1000</span>
+                    <button id="feedback-submit-btn" class="btn-feedback">Enviar comentario</button>
+                </div>
+                <p id="feedback-status" class="feedback-status"></p>
+            </div>
+
+            <button id="restart-btn" class="btn" style="margin-top: 1.5rem;">Repetir Test</button>
         </div>
+
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="app.js"></script>
 </body>
 
