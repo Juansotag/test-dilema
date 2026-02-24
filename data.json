@@ -8,7 +8,7 @@
         "A": "Implementar aranceles elevados y generalizados a bienes importados (competidores de producción local),para fomentar la creación de industria nacional y reducir la dependencia externa.",
         "B": "Aplicar medidas arancelarias selectivas únicamente en sectores clave o ante situaciones de competencia desleal (dumping), manteniendo una economía mayoritariamente abierta.",
         "C": "Reducir aranceles en insumos, maquinaria y tecnología para bajar costos de producción, protegiendo temporalmente solo los productos terminados de sectores sensibles.",
-        "D": "Favorecer la competencia, reducir precios y promover eficiencia”",
+        "D": "Favorecer la competencia, reducir precios y promover eficiencia",
         "E": "Prefiero no contestar."
       }
     },
@@ -90,10 +90,10 @@
       "context": "Eje 3: Justicia, Seguridad y Convivencia",
       "options": {
         "A": "No construir más cárceles y reducir el hacinamiento mediante excarcelaciones masivas y justicia restaurativa.",
-        "B": "Enfocarse en el fortalecimiento de las URIS y estaciones de policía, que también son zonas de reclusión, donde la situación por hacinamiento no es menor. | Mantener las cárceles actuales y usar penas alternativas (casa por cárcel/brazaletes) para delitos no violentos.",
+        "B": "Enfocarse en el fortalecimiento de las URIS y estaciones de policía, que también son zonas de reclusión, donde la situación por hacinamiento no es menor. ",
         "C": "Construir mega cárceles para asegurar que los condenados cumplan su pena efectiva intramural.",
         "D": "Privatizar la construcción y operación de cárceles (modelo concesión) para expandir el sistema rápidamente.",
-        "E": "Prefiero no contestar."
+        "E": "Mantener las cárceles actuales y usar penas alternativas (casa por cárcel/brazaletes) para delitos no violentos."
       }
     },
     {
@@ -141,7 +141,7 @@
         "B": "Respetar los contratos vigentes para evitar demandas, pero no firmar ninguno nuevo.",
         "C": "Firmar nuevos contratos de exploración y asegurar la explotación en yacimientos convencionales y no convencionales, siempre que permitan la transición de la matriz energética y el parque automotor.",
         "D": "Impulsar decididamente la exploración y explotación de hidrocarburos, incluyendo fracking y costa afuera.",
-        "E": ". Impulsar una agenda de transición energética y electromovilidad, prescindiendo a corto y mediano plazo de energías fósiles."
+        "E": "Impulsar una agenda de transición energética y electromovilidad, prescindiendo a corto y mediano plazo de energías fósiles."
       }
     },
     {
@@ -161,7 +161,7 @@
       "text": "¿Cuál debe ser la postura del Estado frente a los proyectos extractivos en zonas de delimitación de páramos o reservas forestales?",
       "context": "Eje 4: Recursos, Energía y Medio Ambiente",
       "options": {
-        "A": "Prohibir cualquier proyecto minero, de extracción y/o infraestructura en ecosistemas delimitados o de interés comunitario, priorizando la conservación del medio ambiente y/o vínculos culturales y ancestrales con el territorio",
+        "A": "Prohibir cualquier proyecto minero, de extracción y/o infraestructura en ecosistemas delimitados o de interés comunitario, priorizando la conservación del medio ambiente y/o vínculos culturales y ancestrales con el territorio.",
         "B": "Permitir proyectos mineros de extracción y/o infraestructuras siempre que garanticen tecnologías de mitigación y compensación ambiental y climática.",
         "C": "Fortalecer las consultas populares y mecanismos de participación directa de poblaciones afectadas, para que sea la comunidad local, la que decida si permite o no la extracción en el territorio.",
         "D": "Formalizar la minería ancestral y artesanal ya existente en estas zonas, pero prohibir la entrada de nuevos proyectos mineros y de extracción.",
@@ -261,7 +261,7 @@
         "B": "Reforma a la Salud",
         "C": "Reforma a la Educación",
         "D": "Reforma a la Justicia",
-        "E": "Reforma Constitucional | Prefiero no contestar."
+        "E": "Reforma Constitucional"
       }
     },
     {
