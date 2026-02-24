@@ -18,11 +18,25 @@
     <div class="container">
         <!-- Main Landing -->
         <div id="landing" class="glass-card animate-in">
-            <h1>Convergencia Electoral</h1>
-            <p class="description">
-                ¿Sabes realmente quién representa mejor tus intereses en las <strong>elecciones presidenciales de
-                    Colombia del 2026</strong>? Responde estas 30 preguntas y descubre con qué candidato tienes mayor
-                afinidad.
+            <img src="Íconos/portada.jpg" class="landing-hero" alt="Portada Convergencia Electoral">
+
+            <p class="description landing-text">
+                <strong>Gobernar es elegir entre opciones difíciles.</strong> En Convergencia Electoral, hemos diseñado
+                una herramienta para que conozcas la visión de estado de quienes aspiran al poder en temas de salud,
+                seguridad, medio ambiente y más.
+            </p>
+
+            <ul class="landing-list">
+                <li><strong>1. El Candidato decide:</strong> Los aspirantes fijan su postura ante dilemas reales de
+                    política pública.</li>
+                <li><strong>2. Tú participas:</strong> Tú respondes esos mismos desafíos desde tu perspectiva.</li>
+                <li><strong>3. El Algoritmo conecta:</strong> Nuestra tecnología compara tus prioridades con las de los
+                    candidatos.</li>
+            </ul>
+
+            <p class="description landing-outro">
+                Al final, obtendrás un <strong>índice de convergencia electoral</strong>: un resultado honesto sobre
+                quién representa mejor tu forma de ver el futuro del país.
             </p>
             <div style="display: flex; gap: 1rem; flex-direction: column; margin-bottom: 2.5rem;">
                 <button id="start-btn" class="btn">Empezar Test</button>
@@ -31,8 +45,9 @@
 
             <div class="attribution-container">
                 <div class="logos-row">
-                    <img src="Íconos/Universidad de la Sabana.png" alt="Universidad de la Sabana" class="logo-sabana">
-                    <img src="Íconos/Govlab.png" alt="GovLab" class="logo-govlab">
+                    <img src="Íconos/Universidad de la Sabana.png?v=2" alt="Universidad de la Sabana"
+                        class="logo-sabana">
+                    <img src="Íconos/Govlab.png?v=2" alt="GovLab" class="logo-govlab">
                 </div>
                 <p class="credits">Herramienta desarrollada por el <strong>Laboratorio de Gobierno (GovLab)</strong> de
                     la Universidad de La Sabana.</p>
@@ -80,7 +95,8 @@
                     <img id="detail-photo" src="" class="candidate-photo-large">
                     <div class="detail-name-party">
                         <h2 id="detail-name">Nombre</h2>
-                        <p id="detail-party">Partido</p>
+                        <p id="detail-party" style="margin-bottom: 8px;">Partido</p>
+                        <div id="detail-profile"></div>
                     </div>
                 </div>
                 <a id="campaign-url-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-campaign hidden">
@@ -147,9 +163,9 @@
                 <div class="share-card-header">
                     <span class="share-card-logo">🗳️ Convergencia Electoral 2026</span>
                     <div class="share-card-logos">
-                        <img src="Íconos/Govlab.png" class="share-logo-img" crossorigin="anonymous" alt="GovLab">
-                        <img src="Íconos/Universidad de la Sabana.png" class="share-logo-img" crossorigin="anonymous"
-                            alt="U. Sabana">
+                        <img src="Íconos/Govlab.png?v=2" class="share-logo-img" crossorigin="anonymous" alt="GovLab">
+                        <img src="Íconos/Universidad de la Sabana.png?v=2" class="share-logo-img"
+                            crossorigin="anonymous" alt="U. Sabana">
                     </div>
                 </div>
                 <p id="share-card-title" class="share-card-user-title"></p>

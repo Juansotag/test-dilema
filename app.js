@@ -127,7 +127,7 @@ async function captureAndDownload() {
     try {
         const canvas = await captureCard();
         const link = document.createElement('a');
-        link.download = `dilema-electoral-${(userName || 'resultados').replace(/\s+/g, '-')}.png`;
+        link.download = `convergencia-electoral-${(userName || 'resultados').replace(/\s+/g, '-')}.png`;
         link.href = canvas.toDataURL('image/png');
         link.click();
     } finally {
@@ -140,8 +140,8 @@ function shareToTwitter(top3) {
     const names = top3.slice(0, 3).map((c, i) => `${MEDALS[i]} ${c.name} (${c.percentage}%)`).join(' ');
     const siteUrl = 'https://test-dilema-production.up.railway.app/';
     const text = userName
-        ? `${userName} hizo el test Dilema Electoral 2026 del Govlab de la Universidad de la Sabana 🗳️\n\nSus candidatos con mayor afinidad son:\n${names}\n\n¿Cuál es el tuyo? ${siteUrl}`
-        : `Hice el test Dilema Electoral 2026 🗳️\n\nMis candidatos con mayor afinidad:\n${names}\n\n¿Cuál es el tuyo? ${siteUrl}`;
+        ? `${userName} hizo el test Convergencia Electoral 2026 del Govlab de la Universidad de la Sabana 🗳️\n\nSus candidatos con mayor afinidad son:\n${names}\n\n¿Cuál es el tuyo? ${siteUrl}`
+        : `Hice el test Convergencia Electoral 2026 🗳️\n\nMis candidatos con mayor afinidad:\n${names}\n\n¿Cuál es el tuyo? ${siteUrl}`;
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener');
 }
@@ -154,13 +154,13 @@ async function shareNative(top3) {
             btn.disabled = true;
             const canvas = await captureCard();
             const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
-            const file = new File([blob], 'dilema-electoral.png', { type: 'image/png' });
-            const shareData = { files: [file], title: 'Dilema Electoral 2026', text: '¿Con quién tienes más afinidad?' };
+            const file = new File([blob], 'convergencia-electoral.png', { type: 'image/png' });
+            const shareData = { files: [file], title: 'Convergencia Electoral 2026', text: '¿Con quién tienes más afinidad?' };
             if (navigator.canShare && navigator.canShare(shareData)) {
                 await navigator.share(shareData);
             } else {
                 // Fallback: share without file
-                await navigator.share({ title: 'Dilema Electoral 2026', text: '¿Cuál es tu candidato?', url: window.location.href });
+                await navigator.share({ title: 'Convergencia Electoral 2026', text: '¿Cuál es tu candidato?', url: window.location.href });
             }
         } catch (e) {
             if (e.name !== 'AbortError') captureAndDownload();
@@ -243,6 +243,7 @@ const candidateDetailView = document.getElementById('candidate-detail-view');
 const detailPhoto = document.getElementById('detail-photo');
 const detailName = document.getElementById('detail-name');
 const detailParty = document.getElementById('detail-party');
+const detailProfile = document.getElementById('detail-profile');
 const answersList = document.getElementById('answers-list');
 
 // Load data desde Supabase
@@ -346,10 +347,12 @@ function showAnswersScreen() {
     quizData.candidates.forEach(candidate => {
         const card = document.createElement('div');
         card.className = 'candidate-selector-card animate-in';
+        const profilePath = candidate.profilePic ? `<img src="${candidate.profilePic}" style="width: 20px; height: 20px; border-radius: 50%; vertical-align: middle; margin-right: 6px;">` : '';
         card.innerHTML = `
             <img src="${candidate.photo || 'https://via.placeholder.com/80'}" alt="${candidate.name}">
             <h3>${candidate.name}</h3>
-            <p>${candidate.party}</p>
+            <p style="margin-bottom: 8px;">${candidate.party}</p>
+            <div class="profile-tag profile-${(candidate.profile || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\s\/_]+/g, '-')}">${profilePath}${(candidate.profile || '').replace(/_/g, ' ')}</div>
         `;
         card.onclick = () => showCandidateDetail(candidate);
         candidatesGrid.appendChild(card);
@@ -376,6 +379,7 @@ function showCandidateDetail(candidate, fromResults = false) {
     detailPhoto.src = detailPhotoPath;
     detailName.innerText = candidate.name;
     detailParty.innerHTML = `<img src="${detailPartyPath}" style="height: 24px; vertical-align: middle; margin-right: 8px;"> ${candidate.party}`;
+    detailProfile.innerHTML = `<div class="profile-tag profile-${(candidate.profile || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\s\/_]+/g, '-')}">${detailProfilePath}${(candidate.profile || '').replace(/_/g, ' ')}</div>`;
 
     // Campaign URL button
     const campaignBtn = document.getElementById('campaign-url-btn');
@@ -536,7 +540,7 @@ function showResults() {
             <div class="candidate-info">
                 <div class="candidate-name">${c.name}</div>
                 <div class="candidate-party">${c.party}</div>
-                <div class="profile-tag">${profilePath}${(c.profile || '').replace(/_/g, ' ')}</div>
+                <div class="profile-tag profile-${(c.profile || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\s\/_]+/g, '-')}">${profilePath}${(c.profile || '').replace(/_/g, ' ')}</div>
                 <div class="match-bar-bg">
                     <div class="match-bar-fill" style="width: ${c.percentage}%"></div>
                 </div>
