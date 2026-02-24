@@ -90,6 +90,19 @@ function showCandidateDetail(candidate, fromResults = false) {
     detailName.innerText = candidate.name;
     detailParty.innerHTML = `<img src="${detailPartyPath}" style="height: 24px; vertical-align: middle; margin-right: 8px;"> ${candidate.party}`;
 
+    // Campaign URL button
+    const campaignBtn = document.getElementById('campaign-url-btn');
+    console.log('[Debug] campaignUrl:', candidate.campaignUrl, '| candidate:', candidate.name);
+    if (candidate.campaignUrl) {
+        campaignBtn.href = candidate.campaignUrl;
+        campaignBtn.classList.remove('hidden');
+    } else {
+        // fallback: show button linking to a web search if no URL found
+        campaignBtn.href = `https://www.google.com/search?q=${encodeURIComponent(candidate.name + ' candidato presidencia Colombia 2026')}`;
+        campaignBtn.classList.remove('hidden');
+    }
+
+
     // Inject profile description
     const profileTextContainer = document.getElementById('candidate-profile-text');
     if (profileTextContainer) {

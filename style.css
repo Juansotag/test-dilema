@@ -246,6 +246,50 @@ p.description {
     display: none !important;
 }
 
+/* Campaign URL Button */
+#campaign-btn-container {
+    margin-bottom: 1rem;
+}
+
+.btn-campaign {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.2rem 0;
+    padding: 0.55rem 1.2rem;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    border-radius: 10px;
+    color: #818cf8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+    touch-action: manipulation;
+}
+
+
+
+.btn-campaign:hover {
+    background: rgba(99, 102, 241, 0.25);
+    border-color: var(--primary);
+    color: var(--text-main);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
+}
+
+.btn-campaign:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+    .btn-campaign {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.6rem;
+    }
+}
+
 /* Attribution & Social */
 .attribution-container {
     margin-top: 2rem;
