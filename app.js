@@ -586,7 +586,8 @@ backToLandingBtn.onclick = () => {
 };
 restartBtn.onclick = () => {
     resultsScreen.classList.add('hidden');
-    showNameScreen();
+    landing.classList.remove('hidden');
+    landing.classList.add('animate-in');
 };
 
 init();
