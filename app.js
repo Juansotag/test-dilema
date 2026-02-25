@@ -144,58 +144,77 @@ function getShareText(top3) {
         : `Hice el test Convergencia Electoral 2026 🗳️\n\nMis candidatos con mayor afinidad:\n${names}\n\n¿Cuál es el tuyo? ${siteUrl}`;
 }
 
-function shareToTwitter(top3) {
+async function shareToPlatform(platform, top3) {
     const text = getShareText(top3);
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener');
-}
-
-function shareToFacebook() {
     const siteUrl = 'https://test-dilema-production.up.railway.app/';
-    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl)}`;
-    window.open(url, '_blank', 'noopener');
-}
 
-function shareToWhatsapp(top3) {
-    const text = getShareText(top3);
-    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener');
-}
+    // Si estamos en un dispositivo móvil con Web Share API, es la forma nativa de enviar la imagen directamente a la app.
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-async function shareToInstagram(top3) {
-    if (navigator.share && navigator.canShare) {
-        await shareNative(top3);
-    } else {
-        alert("Para compartir en Instagram desde tu computadora, descargaremos la imagen de tus resultados. ¡Súbela a tus historias o feed y comparte el enlace de la herramienta!");
-        captureAndDownload();
-    }
-}
-
-async function shareNative(top3) {
-    const btn = document.getElementById('btn-share-native');
-    if (navigator.share) {
+    if (isMobile && navigator.share && navigator.canShare) {
         try {
-            btn.textContent = 'Preparando...';
-            btn.disabled = true;
             const canvas = await captureCard();
             const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
             const file = new File([blob], 'convergencia-electoral.png', { type: 'image/png' });
-            const shareData = { files: [file], title: 'Convergencia Electoral 2026', text: '¿Con quién tienes más afinidad?' };
-            if (navigator.canShare && navigator.canShare(shareData)) {
+
+            let shareText = text;
+            if (platform === 'instagram') {
+                shareText = "Toma pantalla o comparte tus resultados directamente 😎";
+            }
+
+            const shareData = { files: [file], title: 'Convergencia Electoral 2026', text: shareText };
+            if (navigator.canShare(shareData)) {
                 await navigator.share(shareData);
-            } else {
-                // Fallback: share without file
-                await navigator.share({ title: 'Convergencia Electoral 2026', text: '¿Cuál es tu candidato?', url: window.location.href });
+                return;
             }
         } catch (e) {
+            console.warn("Error en Web Share API", e);
             if (e.name !== 'AbortError') captureAndDownload();
-        } finally {
-            btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Compartir`;
-            btn.disabled = false;
+            return;
         }
-    } else {
-        // Desktop sin Web Share API → descarga directa
+    }
+
+    // Comportamiento Desktop (o si Web Share no soporta archivos):
+    // Como las páginas web no pueden adjuntar imágenes a URLs de Twitter/Facebook, descargamos la imagen primero.
+    if (platform === 'native') {
         captureAndDownload();
+        setTimeout(() => {
+            alert("Tu imagen de resultados ha sido descargada. Compártela con tus amigos.");
+            if (navigator.share) {
+                navigator.share({ title: 'Convergencia Electoral 2026', text: '¿Cuál es tu candidato?', url: siteUrl }).catch(() => { });
+            }
+        }, 500);
+        return;
+    }
+
+    try {
+        await captureAndDownload();
+        let url = '';
+
+        if (platform === 'twitter') {
+            url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+        } else if (platform === 'facebook') {
+            url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl)}`;
+        } else if (platform === 'whatsapp') {
+            url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+        } else if (platform === 'instagram') {
+            setTimeout(() => {
+                alert("Tu imagen de resultados ha sido descargada.\n\nSúbela a tu perfil o historia de Instagram y etiqueta a @govlab_unisabana");
+            }, 600);
+            return;
+        }
+
+        if (url) {
+            setTimeout(() => {
+                const proceed = confirm(`Tu imagen ha sido descargada.\n\nAl continuar se abrirá ${platform}. ¡Asegúrate de adjuntar la imagen descargada a tu publicación!`);
+                if (proceed) {
+                    window.open(url, '_blank', 'noopener');
+                }
+            }, 600);
+        }
+
+    } catch (e) {
+        console.error("Error al compartir", e);
     }
 }
 // --- Fin compartir ---
@@ -229,7 +248,7 @@ feedbackText.addEventListener('input', () => {
     const text = feedbackText.value.trim();
     const words = text ? text.split(/\s+/).length : 0;
     feedbackCharCount.textContent = `${words} / 200 palabras`;
-    
+
     if (words > 200) {
         feedbackCharCount.style.color = 'var(--danger, red)';
         feedbackSubmitBtn.disabled = true;
@@ -243,7 +262,7 @@ feedbackText.addEventListener('input', () => {
 feedbackSubmitBtn.addEventListener('click', async () => {
     const text = feedbackText.value.trim();
     const words = text ? text.split(/\s+/).length : 0;
-    
+
     if (!text) {
         feedbackStatus.textContent = '⚠️ Por favor escribe algo antes de enviar.';
         feedbackStatus.className = 'feedback-status error';
@@ -598,11 +617,11 @@ function showResults() {
     const top3 = candidates.slice(0, 3);
     populateShareCard(top3);
     document.getElementById('btn-download').onclick = () => captureAndDownload();
-    document.getElementById('btn-share-native').onclick = () => shareNative(top3);
-    document.getElementById('btn-twitter').onclick = () => shareToTwitter(top3);
-    document.getElementById('btn-facebook').onclick = () => shareToFacebook(top3);
-    document.getElementById('btn-whatsapp').onclick = () => shareToWhatsapp(top3);
-    document.getElementById('btn-instagram').onclick = () => shareToInstagram(top3);
+    document.getElementById('btn-share-native').onclick = () => shareToPlatform('native', top3);
+    document.getElementById('btn-twitter').onclick = () => shareToPlatform('twitter', top3);
+    document.getElementById('btn-facebook').onclick = () => shareToPlatform('facebook', top3);
+    document.getElementById('btn-whatsapp').onclick = () => shareToPlatform('whatsapp', top3);
+    document.getElementById('btn-instagram').onclick = () => shareToPlatform('instagram', top3);
 }
 
 startBtn.onclick = showNameScreen;
