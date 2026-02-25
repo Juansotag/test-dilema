@@ -136,14 +136,39 @@ async function captureAndDownload() {
     }
 }
 
-function shareToTwitter(top3) {
+function getShareText(top3) {
     const names = top3.slice(0, 3).map((c, i) => `${MEDALS[i]} ${c.name} (${c.percentage}%)`).join(' ');
     const siteUrl = 'https://test-dilema-production.up.railway.app/';
-    const text = userName
+    return userName
         ? `${userName} hizo el test Convergencia Electoral 2026 del Govlab de la Universidad de la Sabana 🗳️\n\nSus candidatos con mayor afinidad son:\n${names}\n\n¿Cuál es el tuyo? ${siteUrl}`
         : `Hice el test Convergencia Electoral 2026 🗳️\n\nMis candidatos con mayor afinidad:\n${names}\n\n¿Cuál es el tuyo? ${siteUrl}`;
+}
+
+function shareToTwitter(top3) {
+    const text = getShareText(top3);
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener');
+}
+
+function shareToFacebook() {
+    const siteUrl = 'https://test-dilema-production.up.railway.app/';
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl)}`;
+    window.open(url, '_blank', 'noopener');
+}
+
+function shareToWhatsapp(top3) {
+    const text = getShareText(top3);
+    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener');
+}
+
+async function shareToInstagram(top3) {
+    if (navigator.share && navigator.canShare) {
+        await shareNative(top3);
+    } else {
+        alert("Para compartir en Instagram desde tu computadora, descargaremos la imagen de tus resultados. ¡Súbela a tus historias o feed y comparte el enlace de la herramienta!");
+        captureAndDownload();
+    }
 }
 
 async function shareNative(top3) {
@@ -199,17 +224,33 @@ const feedbackSubmitBtn = document.getElementById('feedback-submit-btn');
 const feedbackStatus = document.getElementById('feedback-status');
 const feedbackCharCount = document.getElementById('feedback-char-count');
 
-// Contador de caracteres del textarea
+// Contador de palabras del textarea
 feedbackText.addEventListener('input', () => {
-    const len = feedbackText.value.length;
-    feedbackCharCount.textContent = `${len} / 1000`;
+    const text = feedbackText.value.trim();
+    const words = text ? text.split(/\s+/).length : 0;
+    feedbackCharCount.textContent = `${words} / 200 palabras`;
+    
+    if (words > 200) {
+        feedbackCharCount.style.color = 'var(--danger, red)';
+        feedbackSubmitBtn.disabled = true;
+    } else {
+        feedbackCharCount.style.color = '';
+        feedbackSubmitBtn.disabled = false;
+    }
 });
 
 // Enviar comentario
 feedbackSubmitBtn.addEventListener('click', async () => {
     const text = feedbackText.value.trim();
+    const words = text ? text.split(/\s+/).length : 0;
+    
     if (!text) {
         feedbackStatus.textContent = '⚠️ Por favor escribe algo antes de enviar.';
+        feedbackStatus.className = 'feedback-status error';
+        return;
+    }
+    if (words > 200) {
+        feedbackStatus.textContent = '⚠️ El comentario no puede exceder las 200 palabras.';
         feedbackStatus.className = 'feedback-status error';
         return;
     }
@@ -220,7 +261,7 @@ feedbackSubmitBtn.addEventListener('click', async () => {
         feedbackStatus.textContent = '✅ ¡Gracias por tu comentario!';
         feedbackStatus.className = 'feedback-status success';
         feedbackText.value = '';
-        feedbackCharCount.textContent = '0 / 1000';
+        feedbackCharCount.textContent = '0 / 200 palabras';
         feedbackSubmitBtn.textContent = 'Comentario enviado';
     } else {
         feedbackStatus.textContent = '❌ Error al enviar. Intenta de nuevo.';
@@ -557,8 +598,11 @@ function showResults() {
     const top3 = candidates.slice(0, 3);
     populateShareCard(top3);
     document.getElementById('btn-download').onclick = () => captureAndDownload();
-    document.getElementById('btn-twitter').onclick = () => shareToTwitter(top3);
     document.getElementById('btn-share-native').onclick = () => shareNative(top3);
+    document.getElementById('btn-twitter').onclick = () => shareToTwitter(top3);
+    document.getElementById('btn-facebook').onclick = () => shareToFacebook(top3);
+    document.getElementById('btn-whatsapp').onclick = () => shareToWhatsapp(top3);
+    document.getElementById('btn-instagram').onclick = () => shareToInstagram(top3);
 }
 
 startBtn.onclick = showNameScreen;
