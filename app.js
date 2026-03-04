@@ -56,16 +56,15 @@ async function saveComment(comment) {
     }
     try {
         const response = await fetch(
-            `${SUPABASE_URL}/rest/v1/quiz_responses?id=eq.${lastResponseId}`,
+            `${SUPABASE_URL}/rest/v1/rpc/save_session_comment`,
             {
-                method: 'PATCH',
+                method: 'POST',
                 headers: {
                     'apikey': SUPABASE_KEY,
                     'Authorization': `Bearer ${SUPABASE_KEY}`,
-                    'Content-Type': 'application/json',
-                    'Prefer': 'return=minimal'
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ comment })
+                body: JSON.stringify({ response_id: lastResponseId, comment_text: comment })
             }
         );
         return response.ok;
