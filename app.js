@@ -479,6 +479,14 @@ async function init() {
             )
         }));
 
+        function resolveImgUrl(url, folder) {
+            if (!url) return null;
+            if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) return url;
+            // Si ya tiene una barra (subcarpeta), lo dejamos tal cual
+            if (url.includes('/')) return url;
+            return `${folder}/${url}`;
+        }
+
         const candidates = rawCandidates.map(c => ({
             id: c.id,
             name: c.name,
@@ -486,9 +494,9 @@ async function init() {
             profile: c.profile,
             description: c.description,
             campaignUrl: c.campaign_url,
-            photo: c.photo_url,
-            partyLogo: c.party_logo_url,
-            profilePic: c.profile_pic_url,
+            photo: resolveImgUrl(c.photo_url, 'Candidatos'),
+            partyLogo: resolveImgUrl(c.party_logo_url, 'Partidos'),
+            profilePic: resolveImgUrl(c.profile_pic_url, 'Íconos'),
             answers: Object.fromEntries(
                 (c.candidate_answers || []).map(a => [String(a.question_id), a.answer])
             )
